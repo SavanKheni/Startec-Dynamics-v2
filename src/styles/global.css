@@ -204,3 +204,18 @@ html {
 body {
   overflow-x: hidden;
 }
+
+.ml12 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
+.word {
+  display: inline-block;
+  white-space: nowrap;
+  /* 🔥 prevents letter breaking */
+}
+
+.letter {
+  display: inline-block;
+}

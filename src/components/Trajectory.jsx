@@ -1,3 +1,4 @@
+import AnimatedText from "./AnimatedText";
 import "./Trajectory.css";
 
 const phases = [
@@ -34,9 +35,15 @@ export default function Trajectory() {
           <span className="nm">Trajectory</span>
         </div>
         <p className="big reveal d1">
-          Every project moves a machine one step closer to standing on its own —
-          first we make it <em>aware</em>, then <em>self-powered</em>, then{" "}
-          <em>self-operating.</em>
+          <AnimatedText
+            as="span"
+            text=" Every project moves a machine one step closer to standing on its own — first we make it "
+          />
+          <AnimatedText as="em" text="aware, " />
+          <AnimatedText as="span" text="then " />
+          <AnimatedText as="em" text="self-powered," />
+          <AnimatedText as="span" text="then " />
+          <AnimatedText as="em" text="self-operating." />
         </p>
 
         <div className="plot reveal d2">
@@ -233,7 +240,9 @@ export default function Trajectory() {
           {phases.map((p) => (
             <div className={`ac reveal ${p.delay}`} key={p.st}>
               <div className="st">{p.st}</div>
-              <h4>{p.title}</h4>
+              <h4>
+                <AnimatedText as="span" text={p.title} />
+              </h4>
               <p>
                 {p.desc}
                 {p.em && <span style={{ color: "var(--ink)" }}>{p.em}</span>}
