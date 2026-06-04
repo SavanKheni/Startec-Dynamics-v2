@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import './Navbar.css';
+import { useState } from "react";
+import "./Navbar.css";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,19 +12,32 @@ export default function Navbar() {
           <b>STARTEC</b>DYNAMICS<span>R&amp;D</span>
         </a>
 
-        <div className={`nlinks${menuOpen ? ' open' : ''}`}>
-          <a href="#thesis" onClick={() => setMenuOpen(false)}>Thesis</a>
-          <a href="#cap" onClick={() => setMenuOpen(false)}>Capabilities</a>
-          <a href="#method" onClick={() => setMenuOpen(false)}>Method</a>
-          <a href="#arc" onClick={() => setMenuOpen(false)}>Trajectory</a>
-          <a href="#files" onClick={() => setMenuOpen(false)}>Projects</a>
-          <a href="startec-about.html">About</a>
-          <a href="startec-press.html">Press</a>
+        <div className={`nlinks${menuOpen ? " open" : ""}`}>
+          <a href="#" onClick={() => setMenuOpen(false)}>
+            Home
+          </a>
+          <a href="#" onClick={() => setMenuOpen(false)}>
+            About Us
+          </a>
+          <a href="#" onClick={() => setMenuOpen(false)}>
+            Projects
+          </a>
+          <a href="#" onClick={() => setMenuOpen(false)}>
+            Services
+          </a>
+          <a href="#" onClick={() => setMenuOpen(false)}>
+            Team
+          </a>
+          <a href="#">Partners</a>
+          <a href="#">Press</a>
+          <a href="#">Contact Us</a>
         </div>
 
-        <a href="#about" className="nbtn">START A PROJECT →</a>
+        <a href="#about" className="nbtn">
+          START A PROJECT →
+        </a>
         <span className="burger" onClick={() => setMenuOpen((v) => !v)}>
-          {menuOpen ? 'CLOSE' : 'MENU'}
+          {menuOpen ? "CLOSE" : "MENU"}
         </span>
       </div>
     </nav>
