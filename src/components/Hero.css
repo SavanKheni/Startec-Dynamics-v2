@@ -1,0 +1,130 @@
+.hero {
+  padding: 70px 0 64px;
+  position: relative;
+}
+.hero .eyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: .16em;
+  color: var(--soft);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.hero .eyebrow .tick { color: var(--red); }
+
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: clamp(46px, 8.4vw, 116px);
+  line-height: .92;
+  letter-spacing: -.02em;
+  margin: 30px 0 0;
+  font-optical-sizing: auto;
+}
+.hero h1 .mk {
+  position: relative;
+  color: var(--red);
+  font-style: italic;
+}
+.hero h1 .mk::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: .08em;
+  width: 100%;
+  height: 3px;
+  background: var(--red);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: underdraw 1s 1s cubic-bezier(.2,.7,.2,1) forwards;
+}
+@keyframes underdraw { to { transform: scaleX(1); } }
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr;
+  gap: 46px;
+  margin-top: 44px;
+  align-items: end;
+}
+.hero-lead {
+  font-size: 19px;
+  color: var(--ink);
+  max-width: 560px;
+}
+.hero-lead .soft { color: var(--soft); }
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+/* spec card */
+.spec {
+  border: 1px solid var(--line-2);
+  background: var(--panel);
+  padding: 0;
+}
+.spec .row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 15px;
+  border-bottom: 1px solid var(--line);
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: .04em;
+}
+.spec .row:last-child { border-bottom: none; }
+.spec .row .k { color: var(--faint); text-transform: uppercase; }
+.spec .row .v { color: var(--ink); text-align: right; }
+.spec .row .v b { color: var(--red); }
+.spec .hd {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 9px 15px;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* dimension line */
+.dimline {
+  margin-top: 54px;
+  display: flex;
+  align-items: center;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: var(--faint);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.dimline .seg {
+  flex: 1;
+  height: 1px;
+  background: var(--line-2);
+  position: relative;
+}
+.dimline .seg::before,
+.dimline .seg::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  width: 1px;
+  height: 7px;
+  background: var(--line-2);
+}
+.dimline .seg::before { left: 0; }
+.dimline .seg::after { right: 0; }
+.dimline .lbl { padding: 0 12px; white-space: nowrap; }
+
+@media (max-width: 880px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 34px; align-items: start; }
+}

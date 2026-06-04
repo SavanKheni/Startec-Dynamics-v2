@@ -1,0 +1,58 @@
+.method .track {
+  position: relative;
+  margin-top: 20px;
+  padding-top: 36px;
+}
+.baseline {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--line-2);
+}
+.baseline::before, .baseline::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  width: 1px;
+  height: 7px;
+  background: var(--ink);
+}
+.baseline::before { left: 0; }
+.baseline::after { right: 0; }
+
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); }
+
+.mstep { position: relative; padding: 0 22px; }
+.mstep:not(:last-child) { border-right: 1px dashed var(--line); }
+.mstep .pt {
+  position: absolute;
+  top: -42px;
+  left: 22px;
+  width: 9px;
+  height: 9px;
+  background: var(--red);
+  border-radius: 50%;
+}
+.mstep .n {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: var(--red);
+  letter-spacing: .1em;
+}
+.mstep h4 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 24px;
+  margin: 10px 0 8px;
+}
+.mstep p { color: var(--soft); font-size: 14px; }
+
+@media (max-width: 880px) {
+  .steps { grid-template-columns: 1fr 1fr; gap: 34px 0; }
+  .mstep { border-right: none !important; padding: 0 16px 0 22px; }
+  .baseline { display: none; }
+  .mstep .pt { display: none; }
+  .method .track { padding-top: 0; }
+}

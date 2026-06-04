@@ -1,0 +1,36 @@
+.thesis .big {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: clamp(26px, 3.6vw, 44px);
+  line-height: 1.14;
+  letter-spacing: -.01em;
+  max-width: 960px;
+}
+.thesis .big em { color: var(--red); font-style: italic; }
+
+.thesis .sub {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+}
+.thesis .sub p {
+  color: var(--soft);
+  font-size: 15px;
+  border-left: 2px solid var(--red);
+  padding-left: 16px;
+}
+.thesis .sub p b {
+  color: var(--ink);
+  font-weight: 600;
+  display: block;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-bottom: 7px;
+}
+
+@media (max-width: 880px) {
+  .thesis .sub { grid-template-columns: 1fr; gap: 20px; }
+}

@@ -1,0 +1,102 @@
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: rgba(237,234,225,.82);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+nav .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: .02em;
+}
+.brand .sq {
+  width: 13px;
+  height: 13px;
+  background: var(--red);
+  display: inline-block;
+  transform: translateY(1px);
+}
+.brand b { font-weight: 700; }
+.brand span {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: var(--faint);
+  letter-spacing: .1em;
+}
+.nlinks {
+  display: flex;
+  gap: 26px;
+  align-items: center;
+}
+.nlinks a {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  letter-spacing: .06em;
+  color: var(--soft);
+  transition: color .2s;
+  position: relative;
+}
+.nlinks a:hover { color: var(--ink); }
+.nlinks a::before {
+  content: "";
+  position: absolute;
+  left: -12px;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  background: var(--red);
+  border-radius: 50%;
+  transform: translateY(-50%) scale(0);
+  transition: transform .2s;
+}
+.nlinks a:hover::before { transform: translateY(-50%) scale(1); }
+
+.nbtn {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 9px 16px;
+  transition: .2s;
+  cursor: crosshair;
+}
+.nbtn:hover { background: var(--red); }
+
+.burger {
+  display: none;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+@media (max-width: 880px) {
+  .nlinks {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 14px;
+    background: var(--paper);
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--line);
+    z-index: 29;
+  }
+  .nlinks.open { display: flex; }
+  .nbtn { display: none; }
+  .burger { display: block; }
+}
