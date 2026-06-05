@@ -387,7 +387,29 @@ function Team() {
     </section>
   );
 }
-
+function BottomCTA() {
+  return (
+    <div className="wrap">
+      <div class="cta reveal in">
+        <h2>
+          <AnimatedText
+            as="span"
+            text=" Founders, manufacturers, investors — if you've got something hard that needs real engineering,"
+          />{" "}
+          <em>
+            <AnimatedText as="span" text=" let's open a conversation." />
+          </em>
+        </h2>
+        <div class="row">
+          <a href="mailto:info@startecdynamics.com" class="btn">
+            TALK TO US <span class="a">↗</span>
+          </a>
+          <span class="mono">info@startecdynamics.com</span>
+        </div>
+      </div>
+    </div>
+  );
+}
 // ─── Root export ──────────────────────────────────────────────────────────────
 export default function CompanySections() {
   useReveal();
@@ -400,6 +422,7 @@ export default function CompanySections() {
       <WorkBand />
       <Lab />
       <Team />
+      <BottomCTA />
     </div>
   );
 }

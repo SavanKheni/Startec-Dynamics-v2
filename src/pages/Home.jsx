@@ -5,6 +5,7 @@ import Capabilities from "../components/Capabilities";
 import Method from "../components/Method";
 import Trajectory from "../components/Trajectory";
 import Projects from "../components/Projects";
+import FooterTopText from "../components/FooterTopText";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <Method />
       <Trajectory />
       <Projects />
+      <FooterTopText />
     </div>
   );
 };
