@@ -13,24 +13,30 @@ export default function Navbar() {
         </a>
 
         <div className={`nlinks${menuOpen ? " open" : ""}`}>
-          <a href="#" onClick={() => setMenuOpen(false)}>
+          <a href="/" onClick={() => setMenuOpen(false)}>
             Home
           </a>
-          <a href="#" onClick={() => setMenuOpen(false)}>
+          <a href="/about-us" onClick={() => setMenuOpen(false)}>
             About Us
           </a>
-          <a href="#" onClick={() => setMenuOpen(false)}>
+          <a href="/projects" onClick={() => setMenuOpen(false)}>
             Projects
           </a>
-          <a href="#" onClick={() => setMenuOpen(false)}>
+          <a href="/services" onClick={() => setMenuOpen(false)}>
             Services
           </a>
-          <a href="#" onClick={() => setMenuOpen(false)}>
+          <a href="/team" onClick={() => setMenuOpen(false)}>
             Team
           </a>
-          <a href="#">Partners</a>
-          <a href="#">Press</a>
-          <a href="#">Contact Us</a>
+          <a href="/partners" onClick={() => setMenuOpen(false)}>
+            Partners
+          </a>
+          <a href="/press" onClick={() => setMenuOpen(false)}>
+            Press
+          </a>
+          <a href="/contact-us" onClick={() => setMenuOpen(false)}>
+            Contact Us
+          </a>
         </div>
 
         <a href="#about" className="nbtn">

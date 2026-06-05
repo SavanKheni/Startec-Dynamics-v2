@@ -1,0 +1,439 @@
+/* ─── ContactSections.css ────────────────────────────────────────────────────
+   All styles scoped under .contact-page-sections to prevent style bleed.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* ── Reveal animation ───────────────────────────────────────────────────── */
+.contact-page-sections .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+        opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) 0s,
+        transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) 0s;
+}
+
+.contact-page-sections .reveal.in {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+.contact-page-sections .reveal.d1 {
+    transition-delay: 0.06s;
+}
+
+.contact-page-sections .reveal.d2 {
+    transition-delay: 0.14s;
+}
+
+.contact-page-sections .reveal.d3 {
+    transition-delay: 0.22s;
+}
+
+.contact-page-sections .reveal.d4 {
+    transition-delay: 0.3s;
+}
+
+/* ── Layout ─────────────────────────────────────────────────────────────── */
+.contact-page-sections .wrap {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 3;
+}
+
+.contact-page-sections .sec {
+    padding: 70px 0;
+    position: relative;
+    z-index: 3;
+}
+
+.contact-page-sections .sechead {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    border-top: 1px solid var(--line-2);
+    padding-top: 14px;
+    margin-bottom: 30px;
+}
+
+.contact-page-sections .sec-no {
+    font-family: "Space Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    color: var(--red);
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.contact-page-sections .sec-nm {
+    font-family: "Space Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    color: var(--soft);
+    text-transform: uppercase;
+}
+
+/* ── Hero ────────────────────────────────────────────────────────────────── */
+.contact-page-sections .hero {
+    padding: 60px 0 40px;
+    position: relative;
+    z-index: 3;
+}
+
+.contact-page-sections .eyebrow {
+    font-family: "Space Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--soft);
+    text-transform: uppercase;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.contact-page-sections .eyebrow-b {
+    color: var(--red);
+}
+
+.contact-page-sections .h1 {
+    font-family: "Fraunces", serif;
+    font-weight: 900;
+    font-size: clamp(46px, 8vw, 108px);
+    line-height: 0.93;
+    letter-spacing: -0.02em;
+    margin: 22px 0 22px;
+}
+
+.contact-page-sections .lead {
+    font-size: 19px;
+    max-width: 580px;
+    color: var(--soft);
+}
+
+.contact-page-sections .lead-b {
+    color: var(--ink);
+    font-weight: 600;
+}
+
+/* ── Contact grid ────────────────────────────────────────────────────────── */
+.contact-page-sections .contact-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+/* ── Form ────────────────────────────────────────────────────────────────── */
+.contact-page-sections .form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.contact-page-sections .field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.contact-page-sections .field-full {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    grid-column: 1 / -1;
+}
+
+.contact-page-sections .label {
+    font-family: "Space Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--soft);
+}
+
+.contact-page-sections .label-optional {
+    text-transform: none;
+    color: var(--faint);
+}
+
+.contact-page-sections .input {
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 15px;
+    padding: 12px 14px;
+    border: 1px solid var(--line-2);
+    background: var(--panel);
+    color: var(--ink);
+    outline: none;
+    border-radius: 0;
+    width: 100%;
+    transition: 0.2s;
+}
+
+.contact-page-sections .input:focus {
+    border-color: var(--red);
+    background: var(--panel-2);
+}
+
+.contact-page-sections .textarea {
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 15px;
+    padding: 12px 14px;
+    border: 1px solid var(--line-2);
+    background: var(--panel);
+    color: var(--ink);
+    outline: none;
+    border-radius: 0;
+    width: 100%;
+    min-height: 130px;
+    resize: vertical;
+    transition: 0.2s;
+}
+
+.contact-page-sections .textarea:focus {
+    border-color: var(--red);
+    background: var(--panel-2);
+}
+
+.contact-page-sections .send-btn {
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    padding: 14px 26px;
+    background: var(--ink);
+    color: var(--paper);
+    border: 1px solid var(--ink);
+    cursor: crosshair;
+    transition: 0.2s;
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 4px;
+}
+
+.contact-page-sections .send-btn:hover {
+    background: var(--red);
+    border-color: var(--red);
+}
+
+.contact-page-sections .send-btn .arrow {
+    transition: transform 0.22s;
+}
+
+.contact-page-sections .send-btn:hover .arrow {
+    transform: translate(3px, -3px);
+}
+
+.contact-page-sections .form-note {
+    font-family: "Space Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    color: var(--faint);
+    text-transform: uppercase;
+    margin-top: 14px;
+}
+
+/* ── Side panel ──────────────────────────────────────────────────────────── */
+.contact-page-sections .side {
+    border: 1px solid var(--ink);
+    background: var(--ink);
+    color: var(--paper);
+    padding: 30px;
+}
+
+.contact-page-sections .side-k {
+    font-family: "Space Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(237, 234, 225, 0.5);
+    margin-bottom: 8px;
+}
+
+.contact-page-sections .side-h3 {
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 6px;
+}
+
+.contact-page-sections .side-em {
+    display: inline-block;
+    margin: 4px 0 26px;
+    color: var(--paper);
+    border-bottom: 1px solid var(--red);
+    font-family: "Space Mono", monospace;
+    font-size: 14px;
+    transition: 0.2s;
+    text-decoration: none;
+}
+
+.contact-page-sections .side-hours {
+    font-size: 14px;
+    color: rgba(237, 234, 225, 0.66);
+}
+
+.contact-page-sections .side-hours-b {
+    color: var(--paper);
+    font-weight: 600;
+}
+
+/* ── Routes ──────────────────────────────────────────────────────────────── */
+.contact-page-sections .routes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.contact-page-sections .route {
+    border: 1px solid var(--line);
+    background: var(--panel);
+    padding: 24px;
+    transition: 0.25s;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+}
+
+.contact-page-sections .route:hover {
+    border-color: var(--red);
+    background: var(--panel-2);
+}
+
+.contact-page-sections .route-tag {
+    font-family: "Space Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--red);
+}
+
+.contact-page-sections .route-h4 {
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    font-size: 21px;
+    margin: 9px 0 7px;
+}
+
+.contact-page-sections .route-p {
+    color: var(--soft);
+    font-size: 14px;
+    flex: 1;
+}
+
+.contact-page-sections .route-go {
+    margin-top: 16px;
+    font-family: "Space Mono", monospace;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--ink);
+    transition: color 0.2s;
+}
+
+.contact-page-sections .route:hover .route-go {
+    color: var(--red);
+}
+
+.contact-page-sections .route-go .arrow {
+    transition: transform 0.2s;
+}
+
+.contact-page-sections .route:hover .route-go .arrow {
+    transform: translate(3px, -3px);
+}
+
+/* ── Locations ───────────────────────────────────────────────────────────── */
+.contact-page-sections .locs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.contact-page-sections .loc {
+    border: 1px solid var(--line);
+    background: var(--panel);
+    padding: 28px;
+    transition: 0.25s;
+}
+
+.contact-page-sections .loc-k {
+    font-family: "Space Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--red);
+}
+
+.contact-page-sections .loc-h3 {
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    font-size: 27px;
+    letter-spacing: -0.01em;
+    margin: 10px 0 12px;
+}
+
+.contact-page-sections .loc-p {
+    color: var(--soft);
+    font-size: 15px;
+    margin-bottom: 16px;
+}
+
+.contact-page-sections .loc-addr {
+    font-family: "Space Mono", monospace;
+    font-size: 12px;
+    color: var(--ink);
+    line-height: 1.7;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 880px) {
+    .contact-page-sections .wrap {
+        padding: 0 24px;
+    }
+
+    .contact-page-sections .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .contact-page-sections .form {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-page-sections .routes {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-page-sections .locs {
+        grid-template-columns: 1fr;
+    }
+
+
+
+    .contact-page-sections .nlinks,
+    .contact-page-sections .nbtn {
+        display: none;
+    }
+
+    .contact-page-sections .burger {
+        display: block;
+    }
+
+
+
+    .contact-page-sections .titleblock {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-page-sections .tb:nth-child(4n) {
+        border-right: 1px solid var(--line-2);
+    }
+}

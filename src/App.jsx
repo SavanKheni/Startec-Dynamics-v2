@@ -12,6 +12,8 @@ import SheetFrame from "./components/SheetFrame";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 export default function App() {
   useReveal();
@@ -49,6 +51,8 @@ export default function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about-us" element={<About />} />
+          <Route path="/contact-us" element={<Contact />} />
         </Routes>
       </main>
       <Footer />

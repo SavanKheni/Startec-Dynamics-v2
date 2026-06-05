@@ -1,0 +1,419 @@
+/* ─── CompanySections.css ────────────────────────────────────────────────────
+   All styles scoped under .about-company-sections to prevent style bleed.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* ── Reveal animation ───────────────────────────────────────────────────── */
+.about-company-sections .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+        opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) 0s,
+        transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) 0s;
+}
+
+.about-company-sections .reveal.in {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+.about-company-sections .reveal.d1 {
+    transition-delay: 0.06s;
+}
+
+.about-company-sections .reveal.d2 {
+    transition-delay: 0.14s;
+}
+
+.about-company-sections .reveal.d3 {
+    transition-delay: 0.22s;
+}
+
+.about-company-sections .reveal.d4 {
+    transition-delay: 0.3s;
+}
+
+/* ── Layout ─────────────────────────────────────────────────────────────── */
+.about-company-sections .wrap {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 3;
+}
+
+.about-company-sections .sec {
+    padding: 78px 0;
+    position: relative;
+    z-index: 3;
+}
+
+.about-company-sections .sechead {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    border-top: 1px solid var(--line-2);
+    padding-top: 14px;
+    margin-bottom: 30px;
+}
+
+.about-company-sections .sec-no {
+    font-family: "Space Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    color: var(--red);
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.about-company-sections .sec-nm {
+    font-family: "Space Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    color: var(--soft);
+    text-transform: uppercase;
+}
+
+/* ── Hero ────────────────────────────────────────────────────────────────── */
+.about-company-sections .hero {
+    padding: 64px 0 56px;
+    position: relative;
+    z-index: 3;
+}
+
+.about-company-sections .eyebrow {
+    font-family: "Space Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--soft);
+    text-transform: uppercase;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.about-company-sections .eyebrow-b {
+    color: var(--red);
+}
+
+.about-company-sections .h1 {
+    font-family: "Fraunces", serif;
+    font-weight: 900;
+    font-size: clamp(44px, 7.6vw, 104px);
+    line-height: 0.93;
+    letter-spacing: -0.02em;
+    margin: 22px 0 26px;
+    max-width: 14ch;
+}
+
+.about-company-sections .lead {
+    font-size: 19px;
+    max-width: 620px;
+    color: var(--ink);
+}
+
+.about-company-sections .lead-soft {
+    color: var(--soft);
+}
+
+.about-company-sections .facts {
+    display: flex;
+    gap: 36px;
+    flex-wrap: wrap;
+    margin-top: 34px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+}
+
+.about-company-sections .fact-n {
+    font-family: "Fraunces", serif;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.about-company-sections .fact-l {
+    font-family: "Space Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--soft);
+    margin-top: 4px;
+}
+
+/* ── Story ───────────────────────────────────────────────────────────────── */
+.about-company-sections .big {
+    font-family: "Fraunces", serif;
+    font-weight: 500;
+    font-size: clamp(26px, 3.6vw, 44px);
+    line-height: 1.13;
+    letter-spacing: -0.01em;
+    max-width: 900px;
+}
+
+.about-company-sections .big-em {
+    color: var(--red);
+    font-style: italic;
+}
+
+.about-company-sections .cols2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.about-company-sections .cols2-p {
+    color: var(--soft);
+    font-size: 16px;
+}
+
+.about-company-sections .cols2-b {
+    color: var(--ink);
+    font-weight: 600;
+}
+
+/* ── Principles ──────────────────────────────────────────────────────────── */
+.about-company-sections .cap {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    border-top: 1px solid var(--line-2);
+}
+
+.about-company-sections .cap-no {
+    font-family: "Space Mono", monospace;
+    font-size: 13px;
+    color: var(--red);
+    padding: 24px 40px 24px 0;
+    border-bottom: 1px solid var(--line);
+    white-space: nowrap;
+    transition: 0.25s;
+}
+
+.about-company-sections .cap-cell {
+    border-bottom: 1px solid var(--line);
+    padding: 24px 0;
+    transition: 0.25s;
+}
+
+.about-company-sections .cap-h3 {
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    font-size: clamp(21px, 2.6vw, 27px);
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+}
+
+.about-company-sections .cap-p {
+    color: var(--soft);
+    font-size: 15px;
+    max-width: 660px;
+}
+
+/* ── Work Band ───────────────────────────────────────────────────────────── */
+.about-company-sections .workband {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.about-company-sections .wphoto {
+    border: 1px solid var(--line-2);
+    background: var(--panel);
+    overflow: hidden;
+}
+
+.about-company-sections .wphoto-img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 525 / 373;
+    object-fit: cover;
+}
+
+.about-company-sections .figcaption {
+    padding: 11px 14px;
+    border-top: 1px solid var(--line-2);
+    font-family: "Space Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--soft);
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-company-sections .fig-b {
+    color: var(--red);
+    font-weight: 700;
+}
+
+/* ── Locations ───────────────────────────────────────────────────────────── */
+.about-company-sections .locs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.about-company-sections .loc {
+    border: 1px solid var(--line);
+    background: var(--panel);
+    padding: 28px;
+    transition: 0.25s;
+    position: relative;
+}
+
+.about-company-sections .loc-k {
+    font-family: "Space Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--red);
+}
+
+.about-company-sections .loc-h3 {
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    font-size: 27px;
+    letter-spacing: -0.01em;
+    margin: 10px 0 12px;
+}
+
+.about-company-sections .loc-p {
+    color: var(--soft);
+    font-size: 15px;
+    margin-bottom: 16px;
+}
+
+.about-company-sections .loc-addr {
+    font-family: "Space Mono", monospace;
+    font-size: 12px;
+    color: var(--ink);
+    line-height: 1.7;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+}
+
+/* ── Team ────────────────────────────────────────────────────────────────── */
+.about-company-sections .team {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.about-company-sections .member {
+    border: 1px solid var(--line);
+    background: var(--panel);
+    padding: 26px;
+    transition: 0.25s;
+}
+
+.about-company-sections .member-add {
+    border: 1px dashed var(--line);
+    background: var(--panel);
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.about-company-sections .mg {
+    width: 54px;
+    height: 54px;
+    border: 1px solid var(--ink);
+    display: grid;
+    place-items: center;
+    font-family: "Fraunces", serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--red);
+    background: var(--paper);
+    margin-bottom: 18px;
+}
+
+.about-company-sections .mg-dashed {
+    width: 54px;
+    height: 54px;
+    border: 1px dashed var(--line);
+    display: grid;
+    place-items: center;
+    font-family: "Fraunces", serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--soft);
+    background: var(--paper);
+    margin-bottom: 18px;
+}
+
+.about-company-sections .member-h4 {
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+}
+
+.about-company-sections .member-role {
+    font-family: "Space Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin: 5px 0 12px;
+}
+
+.about-company-sections .member-p {
+    color: var(--soft);
+    font-size: 14px;
+}
+
+.about-company-sections .member-h4-soft {
+    color: var(--soft);
+}
+
+.about-company-sections .member-p-mt {
+    margin-top: 6px;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 880px) {
+    .about-company-sections .wrap {
+        padding: 0 24px;
+    }
+
+    .about-company-sections .workband {
+        grid-template-columns: 1fr;
+    }
+
+    .about-company-sections .cols2 {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .about-company-sections .locs {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .about-company-sections .cap {
+        grid-template-columns: 1fr;
+    }
+
+    .about-company-sections .cap-no {
+        padding: 18px 0 0;
+        border-bottom: none;
+    }
+
+    .about-company-sections .cap-cell {
+        padding: 8px 0 22px;
+    }
+
+    .about-company-sections .team {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    .about-company-sections .team {
+        grid-template-columns: 1fr;
+    }
+}
