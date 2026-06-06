@@ -2,6 +2,8 @@ import { useEffect, useRef } from "react";
 import "./StartecHomeSections.css";
 import workPhoto3 from "../../assets/workPhoto3.jpg";
 import workPhoto1 from "../../assets/workPhoto1.jpg";
+import AnimatedText from "../AnimatedText";
+
 function useReveal(containerRef) {
   useEffect(() => {
     const io = new IntersectionObserver(
@@ -87,8 +89,14 @@ function HeroSection() {
         </div>
 
         <h1 className="reveal d2">
-          Startec turns isolated machines into connected, intelligent systems
-          that support people <span className="mk">in real time.</span>
+          <AnimatedText
+            as="span"
+            text="Startec turns isolated machines into connected, intelligent systems that support people"
+          />
+          <span className="mk">
+            {" "}
+            <AnimatedText as="span" text="in real time." />
+          </span>
         </h1>
 
         <div className="hero-grid">
@@ -153,10 +161,15 @@ function ThesisSection() {
       <div className="wrap">
         <SectionHead no="§01" label="Thesis" />
         <p className="big reveal d1">
-          We pick what needs to change — <em>and let the products follow.</em>{" "}
-          For too long, the machines people rely on have existed on their own:
-          useful, but disconnected; powerful, but unable to respond when it
-          matters.
+          <AnimatedText as="span" text="We pick what needs to change — " />
+          <em>
+            {" "}
+            <AnimatedText as="span" text="and let the products follow." />
+          </em>{" "}
+          <AnimatedText
+            as="span"
+            text="For too long, the machines people rely on have existed on their own:  useful, but disconnected; powerful, but unable to respond when it matters."
+          />
         </p>
         <div className="sub">
           <p className="reveal d1">
@@ -228,7 +241,10 @@ function CapabilitiesSection() {
               <div className="cap-no">{no}</div>
               <div className="cap-cell cap-body">
                 <h3>
-                  {h} <span className="arrow">→</span>
+                  <AnimatedText as="span" text={h} />{" "}
+                  <span className="arrow">
+                    <AnimatedText as="span" text="→" />
+                  </span>
                 </h3>
                 <p>{p}</p>
               </div>
@@ -278,7 +294,7 @@ function MethodSection() {
             marginBottom: 6,
           }}
         >
-          Lab to field, on the record.
+          <AnimatedText as="span" text="Lab to field, on the record." />
         </h2>
         <p
           className="reveal d1"
@@ -327,7 +343,9 @@ function MethodSection() {
               <div className="mstep" key={n}>
                 <span className="pt" />
                 <div className="n">{n}</div>
-                <h4>{h}</h4>
+                <h4>
+                  <AnimatedText as="span" text={h} />
+                </h4>
                 <p>{p}</p>
               </div>
             ))}
@@ -345,9 +363,22 @@ function TrajectorySection() {
       <div className="wrap">
         <SectionHead no="§04" label="Trajectory" />
         <p className="big reveal d1">
-          Every project moves a machine one step closer to standing on its own —
-          first we make it <em>aware</em>, then <em>self-powered</em>, then{" "}
-          <em>self-operating.</em>
+          <AnimatedText
+            as="span"
+            text="Every project moves a machine one step closer to standing on its own — first we make it"
+          />{" "}
+          <em>
+            <AnimatedText as="span" text="aware" />
+          </em>
+          <AnimatedText as="span" text=", then" />{" "}
+          <em>
+            {" "}
+            <AnimatedText as="span" text="self-powered" />
+          </em>
+          <AnimatedText as="span" text=", then" />{" "}
+          <em>
+            <AnimatedText as="span" text="self-operating." />
+          </em>
         </p>
 
         <div className="plot reveal d2">
@@ -543,7 +574,9 @@ function TrajectorySection() {
         <div className="arc-cap">
           <div className="ac reveal d1">
             <div className="st">01 · AWARE</div>
-            <h4>Make it intelligent</h4>
+            <h4>
+              <AnimatedText as="span" text="Make it intelligent" />
+            </h4>
             <p>
               Add sensing, connectivity, and software to machines that already
               exist. <span style={{ color: "var(--ink)" }}>Live today.</span>
@@ -552,7 +585,9 @@ function TrajectorySection() {
           </div>
           <div className="ac reveal d2">
             <div className="st">02 · SELF-POWERED</div>
-            <h4>Rethink how it moves</h4>
+            <h4>
+              <AnimatedText as="span" text="Rethink how it moves" />
+            </h4>
             <p>
               Re-engineer energy and drivetrain so a machine goes further on its
               own terms.
@@ -561,7 +596,9 @@ function TrajectorySection() {
           </div>
           <div className="ac reveal d3">
             <div className="st">03 · SELF-OPERATING</div>
-            <h4>Take us out of the loop</h4>
+            <h4>
+              <AnimatedText as="span" text="Take us out of the loop" />
+            </h4>
             <p>
               Build toward machines that sense, decide, and act with less human
               input.
@@ -592,7 +629,9 @@ function ProjectsSection() {
               <span className="st">● SHIPPING / 2022–</span>
             </div>
             <div className="meta">
-              <h3>Startec Intelligent</h3>
+              <h3>
+                <AnimatedText as="span" text="Startec Intelligent" />
+              </h3>
               <p>
                 Connected-vehicle intelligence — security, safety, and
                 over-the-air smarts for the machines people ride every day.
@@ -624,7 +663,9 @@ function ProjectsSection() {
               <span className="st">+ OPEN SLOT</span>
             </div>
             <div className="meta">
-              <h3>[ your problem here ]</h3>
+              <h3>
+                <AnimatedText as="span" text="[ your problem here ]" />
+              </h3>
               <p>
                 Have something hard that needs real engineering? Let's open a
                 file.
