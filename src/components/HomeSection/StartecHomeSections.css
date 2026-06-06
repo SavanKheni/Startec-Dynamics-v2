@@ -1,0 +1,868 @@
+/* ── HERO ── */
+.startec-home-sections .hero {
+    padding: 70px 0 64px;
+    position: relative;
+}
+
+.startec-home-sections .hero .eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .16em;
+    color: var(--soft);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.startec-home-sections .hero .eyebrow .tick {
+    color: var(--red);
+}
+
+.startec-home-sections .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(28px, 3.8vw, 55px);
+    line-height: 1.12;
+    letter-spacing: -.02em;
+    margin: 30px 0 0;
+    font-optical-sizing: auto;
+}
+
+.startec-home-sections .hero h1 .mk {
+    position: relative;
+    color: var(--red);
+    font-style: italic;
+}
+
+.startec-home-sections .hero h1 .mk::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: .08em;
+    width: 100%;
+    height: 3px;
+    background: var(--red);
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: underdraw 1s 1s cubic-bezier(.2, .7, .2, 1) forwards;
+}
+
+@keyframes underdraw {
+    to {
+        transform: scaleX(1);
+    }
+}
+
+.startec-home-sections .hero-grid {
+    display: grid;
+    grid-template-columns: 1.55fr 1fr;
+    gap: 46px;
+    margin-top: 44px;
+    align-items: end;
+}
+
+.startec-home-sections .hero-lead {
+    font-size: 19px;
+    color: var(--ink);
+    max-width: 560px;
+}
+
+.startec-home-sections .hero-lead .soft {
+    color: var(--soft);
+}
+
+.startec-home-sections .hero-actions {
+    display: flex;
+    gap: 14px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.startec-home-sections .btn {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: .03em;
+    padding: 13px 22px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: .22s;
+    cursor: crosshair;
+    border: 1px solid var(--ink);
+}
+
+.startec-home-sections .btn-fill {
+    background: var(--ink);
+    color: var(--paper);
+}
+
+.startec-home-sections .btn-fill:hover {
+    background: var(--red);
+    border-color: var(--red);
+}
+
+.startec-home-sections .btn-line {
+    background: transparent;
+    color: var(--ink);
+}
+
+.startec-home-sections .btn-line:hover {
+    border-color: var(--red);
+    color: var(--red);
+}
+
+.startec-home-sections .btn .a {
+    transition: transform .22s;
+}
+
+.startec-home-sections .btn:hover .a {
+    transform: translate(3px, -3px);
+}
+
+/* hero spec panel */
+.startec-home-sections .spec {
+    border: 1px solid var(--line-2);
+    background: var(--panel);
+    padding: 0;
+}
+
+.startec-home-sections .spec .row {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 11px 15px;
+    border-bottom: 1px solid var(--line);
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .04em;
+}
+
+.startec-home-sections .spec .row:last-child {
+    border-bottom: none;
+}
+
+.startec-home-sections .spec .row .k {
+    color: var(--faint);
+    text-transform: uppercase;
+}
+
+.startec-home-sections .spec .row .v {
+    color: var(--ink);
+    text-align: right;
+}
+
+.startec-home-sections .spec .row .v b {
+    color: var(--red);
+}
+
+.startec-home-sections .spec .hd {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 9px 15px;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* dimension line */
+.startec-home-sections .dimline {
+    margin-top: 54px;
+    display: flex;
+    align-items: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--faint);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.startec-home-sections .dimline .seg {
+    flex: 1;
+    height: 1px;
+    background: var(--line-2);
+    position: relative;
+}
+
+.startec-home-sections .dimline .seg::before,
+.startec-home-sections .dimline .seg::after {
+    content: "";
+    position: absolute;
+    top: -3px;
+    width: 1px;
+    height: 7px;
+    background: var(--line-2);
+}
+
+.startec-home-sections .dimline .seg::before {
+    left: 0;
+}
+
+.startec-home-sections .dimline .seg::after {
+    right: 0;
+}
+
+.startec-home-sections .dimline .lbl {
+    padding: 0 12px;
+    white-space: nowrap;
+}
+
+/* ── THESIS ── */
+.startec-home-sections .sec {
+    padding: 78px 0;
+}
+
+.startec-home-sections .thesis .big {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(26px, 3.6vw, 44px);
+    line-height: 1.14;
+    letter-spacing: -.01em;
+    max-width: 960px;
+}
+
+.startec-home-sections .thesis .big em {
+    color: var(--red);
+    font-style: italic;
+}
+
+.startec-home-sections .thesis .sub {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.startec-home-sections .thesis .sub p {
+    color: var(--soft);
+    font-size: 15px;
+    border-left: 2px solid var(--red);
+    padding-left: 16px;
+}
+
+.startec-home-sections .thesis .sub p b {
+    color: var(--ink);
+    font-weight: 600;
+    display: block;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 7px;
+}
+
+/* ── CAPABILITIES ── */
+.startec-home-sections .cap {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    border-top: 1px solid var(--line-2);
+}
+
+.startec-home-sections .cap-row {
+    display: contents;
+}
+
+.startec-home-sections .cap-cell {
+    border-bottom: 1px solid var(--line);
+    padding: 26px 0;
+    transition: .25s;
+}
+
+.startec-home-sections .cap-no {
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    color: var(--red);
+    padding: 26px 40px 26px 0;
+    border-bottom: 1px solid var(--line);
+    white-space: nowrap;
+    transition: .25s;
+}
+
+.startec-home-sections .cap-body {
+    padding-bottom: 26px;
+}
+
+.startec-home-sections .cap-row:hover .cap-no,
+.startec-home-sections .cap-row:hover .cap-cell {
+    background: var(--panel-2);
+}
+
+.startec-home-sections .cap-body h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(22px, 3vw, 30px);
+    letter-spacing: -.01em;
+    line-height: 1.05;
+    margin-bottom: 9px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.startec-home-sections .cap-body h3 .arrow {
+    color: var(--red);
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: .25s;
+    font-family: 'Space Mono', monospace;
+    font-size: 18px;
+}
+
+.startec-home-sections .cap-row:hover .arrow {
+    opacity: 1;
+    transform: none;
+}
+
+.startec-home-sections .cap-body p {
+    color: var(--soft);
+    font-size: 15.5px;
+    max-width: 640px;
+}
+
+/* ── METHOD ── */
+.startec-home-sections .method .track {
+    position: relative;
+    margin-top: 20px;
+    padding-top: 36px;
+}
+
+.startec-home-sections .baseline {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--line-2);
+}
+
+.startec-home-sections .baseline::before,
+.startec-home-sections .baseline::after {
+    content: "";
+    position: absolute;
+    top: -3px;
+    width: 1px;
+    height: 7px;
+    background: var(--ink);
+}
+
+.startec-home-sections .baseline::before {
+    left: 0;
+}
+
+.startec-home-sections .baseline::after {
+    right: 0;
+}
+
+.startec-home-sections .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.startec-home-sections .mstep {
+    position: relative;
+    padding: 0 22px;
+}
+
+.startec-home-sections .mstep:not(:last-child) {
+    border-right: 1px dashed var(--line);
+}
+
+.startec-home-sections .mstep .pt {
+    position: absolute;
+    top: -42px;
+    left: 22px;
+    width: 9px;
+    height: 9px;
+    background: var(--red);
+    border-radius: 50%;
+}
+
+.startec-home-sections .mstep .n {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--red);
+    letter-spacing: .1em;
+}
+
+.startec-home-sections .mstep h4 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 24px;
+    margin: 10px 0 8px;
+}
+
+.startec-home-sections .mstep p {
+    color: var(--soft);
+    font-size: 14px;
+}
+
+/* method images */
+.startec-home-sections .methfigs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 34px;
+}
+
+.startec-home-sections .mfig {
+    border: 1px solid var(--line-2);
+    background: var(--panel);
+    overflow: hidden;
+}
+
+.startec-home-sections .mfig img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 3/2;
+    object-fit: cover;
+    filter: saturate(.92);
+    transition: filter .4s ease;
+}
+
+.startec-home-sections .mfig:hover img {
+    filter: saturate(1.05);
+}
+
+.startec-home-sections .mfig figcaption {
+    padding: 10px 14px;
+    border-top: 1px solid var(--line-2);
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--soft);
+    display: flex;
+    justify-content: space-between;
+}
+
+.startec-home-sections .mfig figcaption b {
+    color: var(--red);
+    font-weight: 700;
+}
+
+/* hero figure */
+.startec-home-sections .herofig {
+    border: 1px solid var(--line-2);
+    background: var(--panel);
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.startec-home-sections .herofig img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    filter: saturate(.92);
+}
+
+.startec-home-sections .herofig figcaption {
+    padding: 9px 13px;
+    border-top: 1px solid var(--line-2);
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--soft);
+}
+
+/* ── TRAJECTORY ── */
+.startec-home-sections .arc .big {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(24px, 3.4vw, 40px);
+    line-height: 1.16;
+    letter-spacing: -.01em;
+    max-width: 920px;
+}
+
+.startec-home-sections .arc .big em {
+    color: var(--red);
+    font-style: italic;
+}
+
+.startec-home-sections .plot {
+    margin: 36px 0 0;
+    border: 1px solid var(--line);
+    background: var(--panel);
+    padding: 20px 22px;
+}
+
+.startec-home-sections .plot svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.startec-home-sections .arc-solid {
+    stroke-dasharray: 460;
+    stroke-dashoffset: 460;
+}
+
+.startec-home-sections .plot.in .arc-solid {
+    animation: draw 1.5s .2s cubic-bezier(.2, .7, .2, 1) forwards;
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.startec-home-sections .arc-cap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    border-top: 1px solid var(--line-2);
+}
+
+.startec-home-sections .arc-cap .ac {
+    padding: 24px 22px;
+    border-right: 1px solid var(--line);
+}
+
+.startec-home-sections .arc-cap .ac:first-child {
+    padding-left: 0;
+}
+
+.startec-home-sections .arc-cap .ac:last-child {
+    border-right: none;
+}
+
+.startec-home-sections .arc-cap .ac .st {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .1em;
+    color: var(--red);
+}
+
+.startec-home-sections .arc-cap .ac h4 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 23px;
+    letter-spacing: -.01em;
+    margin: 9px 0 7px;
+}
+
+.startec-home-sections .arc-cap .ac p {
+    color: var(--soft);
+    font-size: 14.5px;
+}
+
+.startec-home-sections .arc-cap .ac .dot {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin-top: 12px;
+}
+
+.startec-home-sections .arc-note {
+    margin-top: 24px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--faint);
+}
+
+/* ── PROJECTS / FILES ── */
+.startec-home-sections .files {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--line-2);
+}
+
+.startec-home-sections .file {
+    display: grid;
+    grid-template-columns: 130px 1fr auto;
+    gap: 24px;
+    align-items: center;
+    padding: 30px 0;
+    border-bottom: 1px solid var(--line);
+    transition: .25s;
+    position: relative;
+}
+
+.startec-home-sections .file:hover {
+    background: var(--panel-2);
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.startec-home-sections .file .id {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: var(--faint);
+    letter-spacing: .06em;
+}
+
+.startec-home-sections .file .id .st {
+    display: block;
+    margin-top: 8px;
+    color: var(--red);
+    font-size: 10px;
+}
+
+.startec-home-sections .file .meta h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(22px, 3vw, 32px);
+    letter-spacing: -.01em;
+    line-height: 1;
+}
+
+.startec-home-sections .file .meta p {
+    color: var(--soft);
+    font-size: 15px;
+    margin-top: 8px;
+    max-width: 560px;
+}
+
+.startec-home-sections .file .act {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--ink);
+}
+
+.startec-home-sections .file:hover .act {
+    color: var(--red);
+}
+
+.startec-home-sections .file .act .a {
+    transition: transform .2s;
+}
+
+.startec-home-sections .file:hover .act .a {
+    transform: translate(3px, -3px);
+}
+
+.startec-home-sections .file.redacted .meta h3 {
+    color: transparent;
+    background: var(--ink);
+    width: fit-content;
+    padding: 0 4px;
+    user-select: none;
+}
+
+.startec-home-sections .file.redacted .act {
+    color: var(--faint);
+    cursor: not-allowed;
+}
+
+.startec-home-sections .file.redacted:hover {
+    padding-left: 0;
+    padding-right: 0;
+    background: transparent;
+}
+
+.startec-home-sections .file.redacted:hover .act {
+    color: var(--faint);
+}
+
+.startec-home-sections .file.slot {
+    border: 1px dashed var(--line-2);
+    margin-top: 16px;
+    padding: 30px 22px;
+    background: transparent;
+}
+
+.startec-home-sections .file.slot:hover {
+    background: var(--panel-2);
+}
+
+.startec-home-sections .file.slot .meta h3 {
+    color: var(--soft);
+    font-style: italic;
+}
+
+.startec-home-sections .file.slot .act {
+    color: var(--red);
+}
+
+/* ── FOOTER / TITLE BLOCK ── */
+.startec-home-sections footer {
+    margin-top: 70px;
+    position: relative;
+    z-index: 3;
+}
+
+.startec-home-sections .about {
+    padding-bottom: 56px;
+}
+
+.startec-home-sections .about .big {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(22px, 3vw, 34px);
+    line-height: 1.2;
+    max-width: 820px;
+}
+
+.startec-home-sections .titleblock {
+    border: 1px solid var(--ink);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 40px;
+}
+
+.startec-home-sections .tb {
+    border-right: 1px solid var(--line-2);
+    border-bottom: 1px solid var(--line-2);
+    padding: 16px 18px;
+}
+
+.startec-home-sections .tb:nth-child(4n) {
+    border-right: none;
+}
+
+.startec-home-sections .tb .k {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--faint);
+}
+
+.startec-home-sections .tb .v {
+    font-size: 14px;
+    margin-top: 6px;
+    font-weight: 500;
+}
+
+.startec-home-sections .tb .v a:hover {
+    color: var(--red);
+}
+
+.startec-home-sections .tb.wide {
+    grid-column: span 2;
+}
+
+.startec-home-sections .tb.dark {
+    background: var(--ink);
+    color: var(--paper);
+}
+
+.startec-home-sections .tb.dark .k {
+    color: rgba(237, 234, 225, .5);
+}
+
+.startec-home-sections .foot-end {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-bottom: 50px;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .08em;
+    color: var(--faint);
+    text-transform: uppercase;
+}
+
+.startec-home-sections .foot-end a:hover {
+    color: var(--red);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 880px) {
+    .startec-home-sections .wrap {
+        padding: 0 24px;
+    }
+
+    .startec-home-sections .nlinks {
+        display: none;
+    }
+
+    .startec-home-sections .nbtn {
+        display: none;
+    }
+
+    .startec-home-sections .burger {
+        display: block;
+    }
+
+    .startec-home-sections .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 34px;
+        align-items: start;
+    }
+
+    .startec-home-sections .thesis .sub {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .startec-home-sections .cap {
+        grid-template-columns: 1fr;
+    }
+
+    .startec-home-sections .cap-no {
+        padding: 18px 0 0;
+        border-bottom: none;
+    }
+
+    .startec-home-sections .cap-cell {
+        padding: 8px 0 22px;
+    }
+
+    .startec-home-sections .steps {
+        grid-template-columns: 1fr 1fr;
+        gap: 34px 0;
+    }
+
+    .startec-home-sections .mstep {
+        border-right: none !important;
+        padding: 0 16px 0 22px;
+    }
+
+    .startec-home-sections .baseline {
+        display: none;
+    }
+
+    .startec-home-sections .mstep .pt {
+        display: none;
+    }
+
+    .startec-home-sections .method .track {
+        padding-top: 0;
+    }
+
+    .startec-home-sections .file {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        align-items: start;
+    }
+
+    .startec-home-sections .file .id {
+        display: flex;
+        gap: 14px;
+    }
+
+    .startec-home-sections .titleblock {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .startec-home-sections .tb:nth-child(4n) {
+        border-right: 1px solid var(--line-2);
+    }
+
+    .startec-home-sections .tb.wide {
+        grid-column: span 2;
+    }
+
+    .startec-home-sections .methfigs {
+        grid-template-columns: 1fr;
+    }
+}

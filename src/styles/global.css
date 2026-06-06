@@ -13,6 +13,12 @@
   --grid-2: rgba(38, 66, 116, .16);
   --red: #D6341C;
   --maxw: 1240px;
+  --dark: #16181D;
+  --dark-2: #1E2127;
+  --dark-3: #262A31;
+  --dark-ink: #F1EEE6;
+  --dark-soft: #9A9DA4;
+  --dark-line: rgba(255, 255, 255, .1);
 }
 
 *,

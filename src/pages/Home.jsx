@@ -6,16 +6,18 @@ import Method from "../components/Method";
 import Trajectory from "../components/Trajectory";
 import Projects from "../components/Projects";
 import FooterTopText from "../components/FooterTopText";
+import StartecHomeSections from "../components/HomeSection/StartecHomeSections";
 
 const Home = () => {
   return (
     <div>
-      <Hero />
+      <StartecHomeSections />
+      {/* <Hero />
       <Thesis />
       <Capabilities />
       <Method />
       <Trajectory />
-      <Projects />
+      <Projects /> */}
       <FooterTopText />
     </div>
   );
