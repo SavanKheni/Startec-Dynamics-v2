@@ -5,6 +5,7 @@ import press2 from "../../assets/press2.jpg";
 import press3 from "../../assets/press3.jpg";
 import press4 from "../../assets/press4.jpg";
 import press5 from "../../assets/press5.jpg";
+import AnimatedText from "../AnimatedText";
 
 const coverageItems = [
   {
@@ -87,7 +88,7 @@ const PressPage = () => {
             <b>●</b> §00 — IN THE NEWS <b>/</b> SELECTED COVERAGE
           </div>
           <h1 {...r("d2")} className="reveal d2">
-            Press &amp; coverage.
+            <AnimatedText as="span" text="Press &amp; coverage." />
           </h1>
           <p {...r("d3")} className="lead reveal d3">
             What journalists have written about <b>Startec Dynamics</b> — the
@@ -116,8 +117,10 @@ const PressPage = () => {
                 <span>BC BUSINESS · OCT 2025</span>
               </div>
               <h3>
-                Meet the startup making motorcycles smarter (and safer) from
-                British Columbia
+                <AnimatedText
+                  as="span"
+                  text="Meet the startup making motorcycles smarter (and safer) from British Columbia"
+                />
               </h3>
               <p className="note">
                 A deep look at how a Vancouver-based R&amp;D company is building
@@ -135,8 +138,10 @@ const PressPage = () => {
             </div>
             <div className="q">
               <div className="qt">
-                "Now they know within the first minutes. That changes
-                everything."
+                <AnimatedText
+                  as="span"
+                  text="Now they know within the first minutes. That changes everything."
+                />
               </div>
               <div className="by">— Ivan Ting, Founder · via BC Business</div>
             </div>
@@ -169,7 +174,9 @@ const PressPage = () => {
                     <span className="out">{item.outlet}</span>
                     <span className="dt">{item.date}</span>
                   </div>
-                  <h4>{item.title}</h4>
+                  <h4>
+                    <AnimatedText as="span" text={item.title} />
+                  </h4>
                   <p>{item.desc}</p>
                   <span className="go">
                     READ <span className="a">↗</span>
@@ -204,7 +211,9 @@ const PressPage = () => {
             </div>
             <div {...r("d1")} className="kitcell reveal d1">
               <div className="k">Media Enquiries</div>
-              <h4>Talk to us</h4>
+              <h4>
+                <AnimatedText as="span" text="Talk to us" />
+              </h4>
               <p>
                 For interviews, comment, or background, reach the team at{" "}
                 <a className="lk" href="mailto:info@startecdynamics.com">
@@ -215,7 +224,9 @@ const PressPage = () => {
             </div>
             <div {...r("d2")} className="kitcell reveal d2">
               <div className="k">Spokesperson</div>
-              <h4>Ivan Ting · Founder</h4>
+              <h4>
+                <AnimatedText as="span" text="Ivan Ting · Founder" />
+              </h4>
               <p>
                 Available for interviews on motorcycle safety, R&amp;D, and the
                 company's roadmap.
@@ -223,7 +234,9 @@ const PressPage = () => {
             </div>
             <div {...r("d1")} className="kitcell reveal d1">
               <div className="k">Brand Assets</div>
-              <h4>Logos &amp; imagery</h4>
+              <h4>
+                <AnimatedText as="span" text="Logos &amp; imagery" />
+              </h4>
               <p>
                 Logos, product photography, and approved imagery are available
                 on request —{" "}
@@ -235,7 +248,9 @@ const PressPage = () => {
             </div>
             <div {...r("d2")} className="kitcell reveal d2">
               <div className="k">Fast Facts</div>
-              <h4>The essentials</h4>
+              <h4>
+                <AnimatedText as="span" text="The essentials" />
+              </h4>
               <p>
                 Independent R&amp;D · HQ Vancouver, R&amp;D Calgary · first
                 product shipping · raised $600K, raising $4–5M.
