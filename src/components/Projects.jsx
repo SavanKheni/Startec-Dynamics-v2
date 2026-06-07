@@ -10,7 +10,7 @@ export default function Projects() {
           <span className="nm">Projects — Selected Files</span>
         </div>
         <div className="files">
-          <a href="startec-intelligent.html" className="file reveal d1">
+          <a href="/startec-intelligent" className="file reveal d1">
             <div className="id">
               PROJECT 01<span className="st">● SHIPPING / 2022–</span>
             </div>
