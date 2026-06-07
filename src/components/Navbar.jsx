@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Navbar.css";
+import logo from "../assets/logo.svg";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -7,9 +8,8 @@ export default function Navbar() {
   return (
     <nav>
       <div className="wrap">
-        <a href="#top" className="brand">
-          <span className="sq" />
-          <b>STARTEC</b>DYNAMICS<span>R&amp;D</span>
+        <a href="/" className="brand">
+          <img src={logo} alt="Startec Dynamics" />
         </a>
 
         <div className={`nlinks${menuOpen ? " open" : ""}`}>
