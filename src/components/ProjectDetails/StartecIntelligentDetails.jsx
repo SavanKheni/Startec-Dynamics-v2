@@ -1,4 +1,6 @@
 import { useEffect, useRef, useCallback } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
 import "./StartecIntelligent.css";
 import siFig1 from "../../assets/siFig1.jpg";
 import siFig2 from "../../assets/siFig2.jpg";
@@ -318,6 +320,80 @@ function TelemetryPanel() {
   );
 }
 
+// Reusable animated rect wrapper
+const Box = ({ x, y, width, height, delay, rectChildren, textChildren }) => (
+  <motion.g>
+    {/* Rect animates first */}
+    <motion.g
+      initial={{ opacity: 0, scale: 0.92 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: false, margin: "-80px" }}
+      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
+      style={{ transformOrigin: `${x + width / 2}px ${y + height / 2}px` }}
+    >
+      {rectChildren}
+    </motion.g>
+
+    {/* Text animates after rect */}
+    <motion.g
+      initial={{ opacity: 0, y: 6 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, margin: "-80px" }}
+      transition={{
+        duration: 0.5,
+        delay: delay + 0.3,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+    >
+      {textChildren}
+    </motion.g>
+  </motion.g>
+);
+
+// Animated arrow path
+const Arrow = ({ d, delay, labelX, labelY, labelText, points }) => (
+  <motion.g
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    viewport={{ once: false, margin: "-80px" }}
+    transition={{ duration: 0.4, delay, ease: "easeOut" }}
+  >
+    <motion.path
+      d={d}
+      fill="none"
+      stroke="#D6341C"
+      strokeWidth={2}
+      strokeDasharray="6 4"
+      initial={{ pathLength: 0 }}
+      whileInView={{ pathLength: 1 }}
+      viewport={{ once: false, margin: "-80px" }}
+      transition={{ duration: 0.7, delay, ease: "easeInOut" }}
+    />
+    <motion.polygon
+      points={points}
+      fill="#D6341C"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: false, margin: "-80px" }}
+      transition={{ duration: 0.3, delay: delay + 0.6 }}
+    />
+    <motion.text
+      x={labelX}
+      y={labelY}
+      fill="#1B1A16"
+      fontFamily="'Space Mono',monospace"
+      fontSize={10}
+      fontWeight={700}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: false, margin: "-80px" }}
+      transition={{ duration: 0.3, delay: delay + 0.5 }}
+    >
+      {labelText}
+    </motion.text>
+  </motion.g>
+);
+
 function SystemDiagram() {
   return (
     <div className="schem reveal d2">
@@ -327,239 +403,253 @@ function SystemDiagram() {
         role="img"
         aria-label="Startec Intelligent system architecture"
       >
-        {/* On-board unit */}
-        <rect
+        {/* ON-BOARD UNIT — delay 0 */}
+        <Box
           x={40}
           y={150}
           width={270}
           height={170}
-          rx={4}
-          fill="#E9E5DA"
-          stroke="#1B1A16"
-          strokeWidth="1.5"
+          delay={0}
+          rectChildren={
+            <rect
+              x={40}
+              y={150}
+              width={270}
+              height={170}
+              rx={4}
+              fill="#E9E5DA"
+              stroke="#1B1A16"
+              strokeWidth="1.5"
+            />
+          }
+          textChildren={
+            <>
+              <text
+                x={58}
+                y={178}
+                fill="#1B1A16"
+                fontFamily="'Space Mono',monospace"
+                fontSize={12}
+                fontWeight={700}
+              >
+                ON-BOARD UNIT
+              </text>
+              <text
+                x={58}
+                y={194}
+                fill="#908D82"
+                fontFamily="'Space Mono',monospace"
+                fontSize={9}
+                letterSpacing={1}
+              >
+                MOUNTED ON THE VEHICLE
+              </text>
+              {[
+                "▪ Secure 32-bit MCU",
+                "▪ Multi-GNSS positioning",
+                "▪ LTE modem + SMS fallback",
+                "▪ Bluetooth LE 5",
+                "▪ 6-axis IMU (crash/motion)",
+              ].map((t, i) => (
+                <text
+                  key={t}
+                  x={58}
+                  y={224 + i * 20}
+                  fill="#1B1A16"
+                  fontFamily="'Space Mono',monospace"
+                  fontSize={11}
+                >
+                  {t}
+                </text>
+              ))}
+            </>
+          }
         />
-        <text
-          x={58}
-          y={178}
-          fill="#1B1A16"
-          fontFamily="'Space Mono',monospace"
-          fontSize={12}
-          fontWeight={700}
-        >
-          ON-BOARD UNIT
-        </text>
-        <text
-          x={58}
-          y={194}
-          fill="#908D82"
-          fontFamily="'Space Mono',monospace"
-          fontSize={9}
-          letterSpacing={1}
-        >
-          MOUNTED ON THE VEHICLE
-        </text>
-        {[
-          "▪ Secure 32-bit MCU",
-          "▪ Multi-GNSS positioning",
-          "▪ LTE modem + SMS fallback",
-          "▪ Bluetooth LE 5",
-          "▪ 6-axis IMU (crash/motion)",
-        ].map((t, i) => (
-          <text
-            key={t}
-            x={58}
-            y={224 + i * 20}
-            fill="#1B1A16"
-            fontFamily="'Space Mono',monospace"
-            fontSize={11}
-          >
-            {t}
-          </text>
-        ))}
 
-        {/* Cloud */}
-        <rect
+        {/* STARTEC CLOUD — delay 0.3 */}
+        <Box
           x={430}
           y={232}
           width={180}
           height={86}
-          rx={4}
-          fill="#E9E5DA"
-          stroke="#1B1A16"
-          strokeWidth="1.5"
+          delay={0.3}
+          rectChildren={
+            <rect
+              x={430}
+              y={232}
+              width={180}
+              height={86}
+              rx={4}
+              fill="#E9E5DA"
+              stroke="#1B1A16"
+              strokeWidth="1.5"
+            />
+          }
+          textChildren={
+            <>
+              <text
+                x={520}
+                y={270}
+                textAnchor="middle"
+                fill="#1B1A16"
+                fontFamily="'Space Mono',monospace"
+                fontSize={12}
+                fontWeight={700}
+              >
+                STARTEC CLOUD
+              </text>
+              <text
+                x={520}
+                y={288}
+                textAnchor="middle"
+                fill="#908D82"
+                fontFamily="'Space Mono',monospace"
+                fontSize={9}
+                letterSpacing={1}
+              >
+                DATA · OTA · LOGIC
+              </text>
+            </>
+          }
         />
-        <text
-          x={520}
-          y={270}
-          textAnchor="middle"
-          fill="#1B1A16"
-          fontFamily="'Space Mono',monospace"
-          fontSize={12}
-          fontWeight={700}
-        >
-          STARTEC CLOUD
-        </text>
-        <text
-          x={520}
-          y={288}
-          textAnchor="middle"
-          fill="#908D82"
-          fontFamily="'Space Mono',monospace"
-          fontSize={9}
-          letterSpacing={1}
-        >
-          DATA · OTA · LOGIC
-        </text>
 
-        {/* SI Connect */}
-        <rect
+        {/* SI CONNECT — delay 0.6 */}
+        <Box
           x={720}
           y={70}
           width={240}
           height={100}
-          rx={4}
-          fill="#E9E5DA"
-          stroke="#1B1A16"
-          strokeWidth="1.5"
+          delay={0.6}
+          rectChildren={
+            <rect
+              x={720}
+              y={70}
+              width={240}
+              height={100}
+              rx={4}
+              fill="#E9E5DA"
+              stroke="#1B1A16"
+              strokeWidth="1.5"
+            />
+          }
+          textChildren={
+            <>
+              <text
+                x={840}
+                y={112}
+                textAnchor="middle"
+                fill="#1B1A16"
+                fontFamily="'Space Mono',monospace"
+                fontSize={12}
+                fontWeight={700}
+              >
+                SI CONNECT
+              </text>
+              <text
+                x={840}
+                y={130}
+                textAnchor="middle"
+                fill="#908D82"
+                fontFamily="'Space Mono',monospace"
+                fontSize={9}
+                letterSpacing={1}
+              >
+                RIDER APP
+              </text>
+            </>
+          }
         />
-        <text
-          x={840}
-          y={112}
-          textAnchor="middle"
-          fill="#1B1A16"
-          fontFamily="'Space Mono',monospace"
-          fontSize={12}
-          fontWeight={700}
-        >
-          SI CONNECT
-        </text>
-        <text
-          x={840}
-          y={130}
-          textAnchor="middle"
-          fill="#908D82"
-          fontFamily="'Space Mono',monospace"
-          fontSize={9}
-          letterSpacing={1}
-        >
-          RIDER APP
-        </text>
 
-        {/* SI Operator */}
-        <rect
+        {/* SI OPERATOR — delay 0.6 */}
+        <Box
           x={720}
           y={300}
           width={240}
           height={100}
-          rx={4}
-          fill="#E9E5DA"
-          stroke="#1B1A16"
-          strokeWidth="1.5"
+          delay={0.6}
+          rectChildren={
+            <rect
+              x={720}
+              y={300}
+              width={240}
+              height={100}
+              rx={4}
+              fill="#E9E5DA"
+              stroke="#1B1A16"
+              strokeWidth="1.5"
+            />
+          }
+          textChildren={
+            <>
+              <text
+                x={840}
+                y={342}
+                textAnchor="middle"
+                fill="#1B1A16"
+                fontFamily="'Space Mono',monospace"
+                fontSize={12}
+                fontWeight={700}
+              >
+                SI OPERATOR
+              </text>
+              <text
+                x={840}
+                y={360}
+                textAnchor="middle"
+                fill="#908D82"
+                fontFamily="'Space Mono',monospace"
+                fontSize={9}
+                letterSpacing={1}
+              >
+                FLEET / SETUP
+              </text>
+            </>
+          }
         />
-        <text
-          x={840}
-          y={342}
-          textAnchor="middle"
-          fill="#1B1A16"
-          fontFamily="'Space Mono',monospace"
-          fontSize={12}
-          fontWeight={700}
-        >
-          SI OPERATOR
-        </text>
-        <text
-          x={840}
-          y={360}
-          textAnchor="middle"
-          fill="#908D82"
-          fontFamily="'Space Mono',monospace"
-          fontSize={9}
-          letterSpacing={1}
-        >
-          FLEET / SETUP
-        </text>
 
-        {/* Arrows */}
-        <path
-          className="flow"
+        {/* Arrow: OBU → SI Connect (BLE direct) — delay 0.9 */}
+        <Arrow
           d="M310 190 L720 120"
-          fill="none"
-          stroke="#D6341C"
-          strokeWidth={2}
+          points="720,120 706,114 710,127"
+          delay={0.9}
+          labelX={470}
+          labelY={143}
+          labelText="BLE 5 · DIRECT"
         />
-        <polygon points="720,120 706,114 710,127" fill="#D6341C" />
-        <text
-          x={470}
-          y={143}
-          fill="#1B1A16"
-          fontFamily="'Space Mono',monospace"
-          fontSize={10}
-          fontWeight={700}
-        >
-          BLE 5 · DIRECT
-        </text>
 
-        <path
-          className="flow"
+        {/* Arrow: OBU → Cloud (LTE) — delay 1.0 */}
+        <Arrow
           d="M310 270 L430 273"
-          fill="none"
-          stroke="#D6341C"
-          strokeWidth={2}
+          points="430,273 416,267 416,279"
+          delay={1.0}
+          labelX={330}
+          labelY={262}
+          labelText="LTE"
         />
-        <polygon points="430,273 416,267 416,279" fill="#D6341C" />
-        <text
-          x={330}
-          y={262}
-          fill="#1B1A16"
-          fontFamily="'Space Mono',monospace"
-          fontSize={10}
-          fontWeight={700}
-        >
-          LTE
-        </text>
 
-        <path
-          className="flow"
+        {/* Arrow: Cloud → SI Connect (OTA) — delay 1.2 */}
+        <Arrow
           d="M610 250 L720 150"
-          fill="none"
-          stroke="#D6341C"
-          strokeWidth={2}
+          points="720,150 706,150 713,162"
+          delay={1.2}
+          labelX={616}
+          labelY={196}
+          labelText="OTA + SYNC"
         />
-        <polygon points="720,150 706,150 713,162" fill="#D6341C" />
-        <text
-          x={616}
-          y={196}
-          fill="#1B1A16"
-          fontFamily="'Space Mono',monospace"
-          fontSize={10}
-          fontWeight={700}
-        >
-          OTA + SYNC
-        </text>
 
-        <path
-          className="flow"
+        {/* Arrow: Cloud → SI Operator (Fleet Data) — delay 1.3 */}
+        <Arrow
           d="M610 300 L720 340"
-          fill="none"
-          stroke="#D6341C"
-          strokeWidth={2}
+          points="720,340 706,332 705,345"
+          delay={1.3}
+          labelX={616}
+          labelY={328}
+          labelText="FLEET DATA"
         />
-        <polygon points="720,340 706,332 705,345" fill="#D6341C" />
-        <text
-          x={616}
-          y={328}
-          fill="#1B1A16"
-          fontFamily="'Space Mono',monospace"
-          fontSize={10}
-          fontWeight={700}
-        >
-          FLEET DATA
-        </text>
       </svg>
     </div>
   );
 }
-
 /* ─── Carousel ──────────────────────────────────────────────────────────── */
 
 function Carousel({ interval = 4500, tag, slides }) {
