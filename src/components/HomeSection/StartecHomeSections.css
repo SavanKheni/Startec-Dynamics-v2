@@ -865,4 +865,16 @@
     .startec-home-sections .methfigs {
         grid-template-columns: 1fr;
     }
+
+    .startec-home-sections .plot {
+        padding: 0px;
+    }
+
+    .startec-home-sections .hero {
+        padding: 70px 0 0px;
+    }
+
+    .startec-home-sections .sec {
+        padding: 50px 0 0;
+    }
 }
