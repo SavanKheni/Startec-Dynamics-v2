@@ -12,6 +12,7 @@ import dashboardScreen4 from "../../assets/f-d4.png";
 import dashboardScreen5 from "../../assets/f-d5.png";
 import dashboardScreen6 from "../../assets/f-d6.png";
 import dashboardScreen7 from "../../assets/f-d7.png";
+import appIcon from "../../assets/unnamed.png";
 import AnimatedText from "../AnimatedText";
 
 /* ─── Constants / Data ──────────────────────────────────────────────────── */
@@ -880,11 +881,7 @@ const StartecIntelligentDetails = () => {
               <div className="app reveal d1">
                 <div className="t">
                   <h4>
-                    <img
-                      src="https://play-lh.googleusercontent.com/6ilzyOqHbzrtPx-iCuOJ-bunEU5ilGvarGnefnI4qvydMaAndpdOGT7Vacxxjf_Cejo=w48-h48"
-                      alt=""
-                      className="app-icon"
-                    />
+                    <img src={appIcon} alt="" className="app-icon" />
                     SI Connect
                   </h4>
                   <span>Rider · live on Play</span>
