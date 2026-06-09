@@ -16,7 +16,11 @@ const FooterTopText = () => {
             text=" Founded in 2022 and headquartered in Vancouver, Startec Dynamics is an independent R&amp;D company that works with founders, manufacturers, and investors who need"
           />{" "}
           <em style={{ color: "var(--red)", fontStyle: "italic" }}>
-            <AnimatedText as="span" text="real engineering — not slideware." />
+            <AnimatedText
+              as="span"
+              text="real engineering — not slideware."
+              delayStart={4230}
+            />
           </em>
         </p>
       </div>

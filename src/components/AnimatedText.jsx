@@ -9,6 +9,7 @@ const AnimatedText = ({
   as: Tag = "span",
   className = "",
   once = false,
+  delayStart = 0, // ← new prop, ms to wait before this span starts
 }) => {
   const textRef = useRef(null);
 
@@ -20,20 +21,16 @@ const AnimatedText = ({
   // Split text into letters
   useEffect(() => {
     if (!textRef.current) return;
-
     const el = textRef.current;
-
     if (el.querySelector(".letter")) return;
 
     const words = text.split(" ");
-
     const wrapped = words
       .map((word) => {
         const letters = word
           .split("")
           .map((char) => `<span class="letter">${char}</span>`)
           .join("");
-
         return `<span class="word">${letters}</span>`;
       })
       .join(" ");
@@ -44,37 +41,31 @@ const AnimatedText = ({
   // Animation trigger
   useEffect(() => {
     if (!textRef.current) return;
-
     const el = textRef.current;
     const letters = el.querySelectorAll(".letter");
 
     if (isInView) {
-      // RESET before animation
-      letters.forEach((el) => {
-        el.style.opacity = 0;
-        el.style.transform = "translateX(40px)";
+      letters.forEach((l) => {
+        l.style.opacity = 0;
+        l.style.transform = "translateX(40px)";
       });
 
       const tl = createTimeline({
-        defaults: {
-          duration: 900,
-          easing: "outExpo",
-        },
+        defaults: { duration: 900, easing: "outExpo" },
       });
 
       tl.add(letters, {
         translateX: [40, 0],
         opacity: [0, 1],
-        delay: (_, i) => i * 30,
+        delay: (_, i) => delayStart + i * 30, // ← offset entire span
       });
     } else {
-      // optional reset when leaving view
-      letters.forEach((el) => {
-        el.style.opacity = 0;
-        el.style.transform = "translateX(40px)";
+      letters.forEach((l) => {
+        l.style.opacity = 0;
+        l.style.transform = "translateX(40px)";
       });
     }
-  }, [isInView]);
+  }, [isInView, delayStart]);
 
   return (
     <Tag ref={textRef} className={`ml12 ${className}`}>

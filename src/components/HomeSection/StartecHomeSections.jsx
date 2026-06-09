@@ -95,7 +95,7 @@ function HeroSection() {
           />
           <span className="mk">
             {" "}
-            <AnimatedText as="span" text="in real time." />
+            <AnimatedText as="span" text="in real time." delayStart={2490} />
           </span>
         </h1>
 
@@ -164,11 +164,16 @@ function ThesisSection() {
           <AnimatedText as="span" text="We pick what needs to change — " />
           <em>
             {" "}
-            <AnimatedText as="span" text="and let the products follow." />
+            <AnimatedText
+              as="span"
+              text="and let the products follow."
+              delayStart={31 * 30}
+            />
           </em>{" "}
           <AnimatedText
             as="span"
             text="For too long, the machines people rely on have existed on their own:  useful, but disconnected; powerful, but unable to respond when it matters."
+            delayStart={(31 + 28) * 30}
           />
         </p>
         <div className="sub">
@@ -368,16 +373,15 @@ function TrajectorySection() {
             text="Every project moves a machine one step closer to standing on its own — first we make it"
           />{" "}
           <em>
-            <AnimatedText as="span" text="aware" />
+            <AnimatedText as="span" text="aware" delayStart={2400} />
           </em>
-          <AnimatedText as="span" text=", then" />{" "}
+          <AnimatedText as="span" text=", then" delayStart={2550} />{" "}
           <em>
-            {" "}
-            <AnimatedText as="span" text="self-powered" />
+            <AnimatedText as="span" text="self-powered" delayStart={2700} />
           </em>
-          <AnimatedText as="span" text=", then" />{" "}
+          <AnimatedText as="span" text=", then" delayStart={3060} />{" "}
           <em>
-            <AnimatedText as="span" text="self-operating." />
+            <AnimatedText as="span" text="self-operating." delayStart={3210} />
           </em>
         </p>
 

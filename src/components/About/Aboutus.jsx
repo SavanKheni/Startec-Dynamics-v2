@@ -106,6 +106,7 @@ function Story() {
               <AnimatedText
                 as="span"
                 text=" never reaches the people who'd benefit most."
+                delayStart={1650}
               />
             </em>
           </p>
@@ -394,12 +395,17 @@ function BottomCTA() {
         <h2>
           <AnimatedText
             as="span"
-            text=" Founders, manufacturers, investors — if you've got something hard that needs real engineering,"
+            text="Founders, manufacturers, investors — if you've got something hard that needs real engineering,"
           />{" "}
           <em>
-            <AnimatedText as="span" text=" let's open a conversation." />
+            <AnimatedText
+              as="span"
+              text=" let's open a conversation."
+              delayStart={2460}
+            />
           </em>
         </h2>
+
         <div class="row">
           <a href="mailto:info@startecdynamics.com" class="btn">
             TALK TO US <span class="a">↗</span>

@@ -752,8 +752,7 @@ const StartecIntelligentDetails = () => {
               text="A motorcycle doesn't have to be electric or expensive"
             />{" "}
             <em>
-              {" "}
-              <AnimatedText as="span" text="to be smart." />
+              <AnimatedText as="span" text="to be smart." delayStart={1380} />
             </em>
           </p>
           <div className="cols">
@@ -936,8 +935,11 @@ const StartecIntelligentDetails = () => {
                 text="Bringing Startec Intelligent to your vehicles, your fleet, or your factory? "
               />
               <em>
-                {" "}
-                <AnimatedText as="span" text="Let's open a conversation." />
+                <AnimatedText
+                  as="span"
+                  text="Let's open a conversation."
+                  delayStart={1980}
+                />
               </em>
             </h2>
             <div className="row">
