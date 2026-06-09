@@ -1,15 +1,17 @@
-import React, { useEffect, useRef, useCallback } from "react";
+import { useEffect, useRef, useCallback } from "react";
 import "./StartecIntelligent.css";
 import siFig1 from "../../assets/siFig1.jpg";
 import siFig2 from "../../assets/siFig2.jpg";
-import siApp1 from "../../assets/siApp1.jpg";
-import siApp2 from "../../assets/siApp2.jpg";
-import siApp3 from "../../assets/siApp3.jpg";
-import siApp4 from "../../assets/siApp4.jpg";
-import fm1 from "../../assets/fm1.jpg";
-import fm2 from "../../assets/fm2.jpg";
-import fm3 from "../../assets/fm3.jpg";
-import fm4 from "../../assets/fm4.jpg";
+import siApp1 from "../../assets/si-sonnect-1.png";
+import siApp2 from "../../assets/si-sonnect-2.png";
+import siApp3 from "../../assets/si-sonnect-3.png";
+import siApp4 from "../../assets/si-sonnect-4.png";
+import dashboardScreen from "../../assets/f-d.png";
+import dashboardScreen2 from "../../assets/f-d2.png";
+import dashboardScreen4 from "../../assets/f-d4.png";
+import dashboardScreen5 from "../../assets/f-d5.png";
+import dashboardScreen6 from "../../assets/f-d6.png";
+import dashboardScreen7 from "../../assets/f-d7.png";
 import AnimatedText from "../AnimatedText";
 
 /* ─── Constants / Data ──────────────────────────────────────────────────── */
@@ -99,53 +101,65 @@ const SI_CONNECT_SLIDES = [
   {
     img: siApp1,
     alt: "SI Connect locate and status",
-    h: "Locate & status",
-    p: "See exactly where the bike is, its live status, and recent routes — on a map, in real time.",
+    h: "Vehicle Location",
+    p: "Stay connected to your bike from anywhere. Monitor real-time location, view travel history, control key systems, and plan ahead with nearby gas stations and live weather — all from one intuitive dashboard.",
   },
   {
     img: siApp2,
     alt: "SI Connect theft detection",
-    h: "Theft detection",
-    p: "The instant the bike moves without authorisation, the rider is alerted and can disable it.",
+    h: "Security & System Notifications",
+    p: "Get instant alerts when it matters most. Respond to theft events in real time, confirm incidents directly from the app, and stay up to date with system notifications ensuring you always have the latest features.",
   },
   {
     img: siApp3,
     alt: "SI Connect alerts and commands",
-    h: "Alerts & commands",
-    p: "Crash and collision alerts, plus remote commands: lock, unlock, flash the lights, cut the engine.",
+    h: "Notification & Command History",
+    p: "Keep a clear record of every event and action. Review collision alerts with timestamps and locations, and track past commands — unlocking, lighting, engine changes — to confirm everything executed as intended.",
   },
   {
     img: siApp4,
     alt: "SI Connect nearby help",
-    h: "Nearby help",
-    p: "In an emergency, surface the nearest clinics, hospitals, and fuel — routed from the rider's location.",
+    h: "Essential Services Locator",
+    p: "Find what you need, fast. Locate nearby gas stations and medical facilities with live status, addresses, contact numbers, and direct map links — so you are never without support when you need it most.",
   },
 ];
 
 const FLEET_SLIDES = [
   {
-    img: fm1,
+    img: dashboardScreen2,
     alt: "SI Fleet overview",
-    h: "Fleet overview",
-    p: "Every vehicle, rider, and alert in one console — utilisation, health, and incidents at a glance.",
+    h: "Overview Screen",
+    p: "Your fleet at a glance. Track active bikes, system alerts, user counts, and trip data through live KPI cards, comparative charts, and an interactive accident map — all consolidated in one command center.",
   },
   {
-    img: fm2,
+    img: dashboardScreen7,
     alt: "SI Fleet live tracking",
-    h: "Live tracking",
-    p: "Watch the entire fleet move on the map, with per-vehicle status and trip analytics.",
+    h: "GPS Tracking",
+    p: "Monitor every vehicle with precision. Search by VIN to visualize routes, track engine and lock status, analyze IMU and speed data, and export records — giving you full visibility over movement and behavior.",
   },
   {
-    img: fm3,
+    img: dashboardScreen,
     alt: "SI Fleet driver management",
-    h: "Driver management",
-    p: "Manage riders and access, track theft events, and control who holds which bike.",
+    h: "Live Tracking",
+    p: "Complete real-time oversight of your entire fleet. Monitor vehicle positions, health, and activity as they happen — reducing operational costs, improving response times, and keeping every journey accountable.",
   },
   {
-    img: fm4,
+    img: dashboardScreen6,
+    alt: "SI Fleet alerts",
+    h: "Alerts Notifications",
+    p: "Stay ahead of critical events. An interactive accident map and live alert list surface incidents by urgency — letting you assess driver status, view locations, and initiate contact the moment something happens.",
+  },
+  {
+    img: dashboardScreen4,
+    alt: "SI Fleet driver management",
+    h: "Driver Management",
+    p: "Centralize control of your fleet assets. Monitor theft and accident events, assign hardware to owners, and manage user permissions — all from a single panel built for fast, reliable fleet administration.",
+  },
+  {
+    img: dashboardScreen5,
     alt: "SI Fleet geo-fencing",
-    h: "Geo-fencing",
-    p: "Draw zones, set the rules, and get instant alerts when a vehicle crosses a boundary.",
+    h: "Geo-Fencing Module",
+    p: "Define boundaries, get instant alerts. Track zone entry and exit events in real time, manage perimeters on an interactive map, and review incident history — keeping your fleet secure and always within bounds.",
   },
 ];
 
@@ -553,6 +567,10 @@ function Carousel({ interval = 4500, tag, slides }) {
   const idxRef = useRef(0);
   const pausedRef = useRef(false);
 
+  // Store callbacks in refs so event listeners never go stale
+  const goRef = useRef(null);
+  const playRef = useRef(null);
+
   const go = useCallback(
     (k) => {
       const root = rootRef.current;
@@ -577,18 +595,13 @@ function Carousel({ interval = 4500, tag, slides }) {
 
       if (bar) {
         bar.style.animation = "none";
-        void bar.offsetWidth; // reflow to restart animation
+        void bar.offsetWidth;
         bar.style.animation = `carbar ${interval}ms linear`;
         if (pausedRef.current) bar.style.animationPlayState = "paused";
       }
     },
     [interval],
   );
-
-  const play = useCallback(() => {
-    if (timerRef.current) clearInterval(timerRef.current);
-    timerRef.current = setInterval(() => go(idxRef.current + 1), interval);
-  }, [go, interval]);
 
   const stop = useCallback(() => {
     if (timerRef.current) {
@@ -597,6 +610,22 @@ function Carousel({ interval = 4500, tag, slides }) {
     }
   }, []);
 
+  const play = useCallback(() => {
+    stop();
+    timerRef.current = setInterval(
+      () => goRef.current(idxRef.current + 1), // ← always reads latest go + latest idx
+      interval,
+    );
+  }, [stop, interval]);
+
+  // Keep refs in sync
+  useEffect(() => {
+    goRef.current = go;
+  }, [go]);
+  useEffect(() => {
+    playRef.current = play;
+  }, [play]);
+
   useEffect(() => {
     const root = rootRef.current;
     if (!root) return;
@@ -604,21 +633,28 @@ function Carousel({ interval = 4500, tag, slides }) {
     go(0);
     play();
 
-    root.querySelectorAll(".dot").forEach((d, x) =>
-      d.addEventListener("click", () => {
-        go(x);
-        play();
-      }),
-    );
+    // Wrap handlers so they always call the current ref version
+    const dotHandlers = [];
+    root.querySelectorAll(".dot").forEach((d, x) => {
+      const handler = () => {
+        goRef.current(x);
+        playRef.current();
+      };
+      dotHandlers.push({ el: d, handler });
+      d.addEventListener("click", handler);
+    });
 
-    root.querySelector(".nav-prev")?.addEventListener("click", () => {
-      go(idxRef.current - 1);
-      play();
-    });
-    root.querySelector(".nav-next")?.addEventListener("click", () => {
-      go(idxRef.current + 1);
-      play();
-    });
+    const prevHandler = () => {
+      goRef.current(idxRef.current - 1);
+      playRef.current();
+    };
+    const nextHandler = () => {
+      goRef.current(idxRef.current + 1);
+      playRef.current();
+    };
+
+    root.querySelector(".nav-prev")?.addEventListener("click", prevHandler);
+    root.querySelector(".nav-next")?.addEventListener("click", nextHandler);
 
     const onEnter = () => {
       pausedRef.current = true;
@@ -628,7 +664,7 @@ function Carousel({ interval = 4500, tag, slides }) {
     };
     const onLeave = () => {
       pausedRef.current = false;
-      play();
+      playRef.current();
     };
 
     root.addEventListener("mouseenter", onEnter);
@@ -636,14 +672,22 @@ function Carousel({ interval = 4500, tag, slides }) {
 
     return () => {
       stop();
+      dotHandlers.forEach(({ el, handler }) =>
+        el.removeEventListener("click", handler),
+      );
+      root
+        .querySelector(".nav-prev")
+        ?.removeEventListener("click", prevHandler);
+      root
+        .querySelector(".nav-next")
+        ?.removeEventListener("click", nextHandler);
       root.removeEventListener("mouseenter", onEnter);
       root.removeEventListener("mouseleave", onLeave);
     };
-  }, [go, play, stop]);
+  }, []); // ← empty deps: runs once, refs handle staleness
 
   return (
     <div className="carousel reveal" ref={rootRef} data-interval={interval}>
-      {/* Slide images */}
       <div className="car-stage">
         {slides.map((s, i) => (
           <figure key={i} className={`car-slide${i === 0 ? " is-active" : ""}`}>
@@ -652,7 +696,6 @@ function Carousel({ interval = 4500, tag, slides }) {
         ))}
       </div>
 
-      {/* Descriptions */}
       <div className="car-desc">
         <div className="car-top">
           <span className="car-tag">{tag}</span>
