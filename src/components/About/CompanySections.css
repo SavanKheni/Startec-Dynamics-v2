@@ -410,6 +410,14 @@
     .about-company-sections .team {
         grid-template-columns: 1fr 1fr;
     }
+
+    .about-company-sections .hero {
+        padding: 56px 0 0px;
+    }
+
+    .about-company-sections .sec {
+        padding: 50px 0 0;
+    }
 }
 
 @media (max-width: 560px) {

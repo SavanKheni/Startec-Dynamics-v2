@@ -389,4 +389,12 @@
     .press-page-sections .kit {
         grid-template-columns: 1fr;
     }
+
+    .press-page-sections .hero {
+        padding: 56px 0 0px;
+    }
+
+    .press-page-sections .sec {
+        padding: 50px 0 0;
+    }
 }

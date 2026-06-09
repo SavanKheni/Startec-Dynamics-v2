@@ -945,6 +945,7 @@
 
     .project-details-page .car-desc {
         border-left: none;
+        height: 360px;
         border-top: 1px solid var(--dark-line);
     }
 
@@ -956,6 +957,15 @@
         grid-template-columns: 1fr;
         gap: 8px;
     }
+
+    .project-details-page .hero {
+        padding: 56px 0 0px;
+    }
+
+    .project-details-page .sec {
+        padding: 50px 0 0;
+    }
+
 }
 
 @media (max-width: 600px) {

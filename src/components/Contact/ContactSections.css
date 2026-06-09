@@ -436,4 +436,12 @@
     .contact-page-sections .tb:nth-child(4n) {
         border-right: 1px solid var(--line-2);
     }
+
+    .contact-page-sections .hero {
+        padding: 56px 0 0px;
+    }
+
+    .contact-page-sections .sec {
+        padding: 50px 0 0;
+    }
 }
