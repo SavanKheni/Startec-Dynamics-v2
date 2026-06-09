@@ -1,7 +1,16 @@
+import { useLocation } from "react-router-dom";
 import AnimatedText from "./AnimatedText";
 import "./Footer.css";
-
+const SHEET_NUMBER = {
+  "/": "01",
+  "/startec-intelligent": "02",
+  "/about-us": "03",
+  "/press": "04",
+  "/contact-us": "05",
+};
 export default function Footer() {
+  const { pathname } = useLocation();
+  const sheet = SHEET_NUMBER[pathname] ?? "01";
   return (
     <footer id="about">
       <div className="wrap">
@@ -43,7 +52,7 @@ export default function Footer() {
           </div>
           <div className="tb">
             <div className="k">Sheet</div>
-            <div className="v">01 of 01</div>
+            <div className="v">{sheet} of 05</div>
           </div>
           <div className="tb">
             <div className="k">Revision</div>
