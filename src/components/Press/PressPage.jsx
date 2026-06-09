@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from "react";
 import "./PressPage.css";
-import press1 from "../../assets/press1.jpg";
-import press2 from "../../assets/press2.jpg";
-import press3 from "../../assets/press3.jpg";
-import press4 from "../../assets/press4.jpg";
-import press5 from "../../assets/press5.jpg";
+import press1 from "../../assets/press1.png";
+import press2 from "../../assets/press2.png";
+import press3 from "../../assets/press3.png";
+import press4 from "../../assets/press4.png";
+import press5 from "../../assets/press5.png";
 import AnimatedText from "../AnimatedText";
 
 const coverageItems = [
