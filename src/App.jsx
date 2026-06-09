@@ -23,11 +23,10 @@ export default function App() {
 
   const lenisRef = useRef(null);
 
-  // ✅ Lenis setup
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
-      lerp: 0.08, // 🔥 smoother & stable
+      lerp: 0.08,
       smoothWheel: true,
       smoothTouch: false,
     });
@@ -41,14 +40,12 @@ export default function App() {
 
     requestAnimationFrame(raf);
 
-    return () => {
-      lenis.destroy();
-    };
+    return () => lenis.destroy();
   }, []);
 
   return (
     <div>
-      <Navbar />
+      <Navbar lenisRef={lenisRef} /> {/* ← pass ref */}
       <SheetFrame />
       <main>
         <Routes>

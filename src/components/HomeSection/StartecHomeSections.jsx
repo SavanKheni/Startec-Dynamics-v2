@@ -112,7 +112,7 @@ function HeroSection() {
               <a href="#files" className="btn btn-fill">
                 VIEW THE WORK <span className="a">↗</span>
               </a>
-              <a href="startec-contact.html" className="btn btn-line">
+              <a href="/contact-us" className="btn btn-line">
                 START A PROJECT <span className="a">↗</span>
               </a>
             </div>
@@ -747,10 +747,8 @@ function AboutFooter() {
         <div className="foot-end">
           <span>© 2026 Startec Dynamics Inc. — All rights reserved.</span>
           <span>
-            <a href="startec-about.html">About</a> ·{" "}
-            <a href="startec-press.html">Press</a> ·{" "}
-            <a href="startec-contact.html">Contact</a> ·{" "}
-            <a href="#">LinkedIn</a>
+            <a href="/about-us">About</a> · <a href="/press">Press</a> ·{" "}
+            <a href="/contact-us">Contact</a> · <a href="#">LinkedIn</a>
           </span>
         </div>
       </div>
@@ -787,52 +785,6 @@ function SheetFrame() {
       <div id="chy" />
       <div id="coord">X:0000 Y:0000</div>
     </>
-  );
-}
-
-/* ═══════════════════════════════════════════
-   NAV
-   (included here; swap for your own if header
-    is managed externally)
-═══════════════════════════════════════════ */
-function Nav() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  return (
-    <nav>
-      <div className="wrap">
-        <a href="#top" className="brand">
-          <span className="sq" />
-          <b>STARTEC</b>DYNAMICS<span>R&amp;D</span>
-        </a>
-
-        <div className={`nlinks${menuOpen ? " open" : ""}`}>
-          {[
-            "#thesis:Thesis",
-            "#cap:Capabilities",
-            "#method:Method",
-            "#arc:Trajectory",
-            "#files:Projects",
-            "startec-about.html:About",
-            "startec-press.html:Press",
-          ].map((item) => {
-            const [href, label] = item.split(":");
-            return (
-              <a href={href} key={label}>
-                {label}
-              </a>
-            );
-          })}
-        </div>
-
-        <a href="startec-contact.html" className="nbtn">
-          CONTACT →
-        </a>
-        <span className="burger" onClick={() => setMenuOpen(!menuOpen)}>
-          MENU
-        </span>
-      </div>
-    </nav>
   );
 }
 

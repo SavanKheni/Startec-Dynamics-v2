@@ -927,7 +927,7 @@ const StartecIntelligentDetails = () => {
       </section>
 
       {/* ── CTA ── */}
-      <section>
+      <section id="contact">
         <div className="wrap">
           <div className="cta reveal in">
             <h2>
