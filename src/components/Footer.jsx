@@ -21,31 +21,31 @@ export default function Footer() {
           </div>
           <div className="tb">
             <div className="k">Headquarters</div>
-            <a
-              href="https://maps.app.goo.gl/EJhTEfN53VQ1n5wn9"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div className="v">
+            <div className="v">
+              <a
+                href="https://maps.app.goo.gl/EJhTEfN53VQ1n5wn9"
+                target="_blank"
+                rel="noreferrer"
+              >
                 804 Pacific St
                 <br />
                 Vancouver, BC V6Z 1C2
-              </div>
-            </a>
+              </a>
+            </div>
           </div>
           <div className="tb">
             <div className="k">R&amp;D Centre</div>
-            <a
-              href="https://maps.app.goo.gl/uyiQbVqHkJsnzJV97"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div className="v">
+            <div className="v">
+              <a
+                href="https://maps.app.goo.gl/uyiQbVqHkJsnzJV97"
+                target="_blank"
+                rel="noreferrer"
+              >
                 3655 36 St NW
                 <br />
                 Calgary, AB T2L 1Y8
-              </div>
-            </a>
+              </a>
+            </div>
           </div>
           <div className="tb">
             <div className="k">Contact</div>
