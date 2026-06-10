@@ -289,43 +289,55 @@ function FindUs() {
           <SecHead no="§03" nm="Find Us" />
         </R>
         <div className="locs">
-          <R d="d1">
-            <div className="loc">
-              <div className="loc-k">HQ · Commercial</div>
-              <h3 className="loc-h3">
-                <AnimatedText as="span" text="Vancouver, BC" />
-              </h3>
-              <p className="loc-p">
-                Partnerships, commercial strategy, and investor relations.
-              </p>
-              <div className="loc-addr">
-                804 PACIFIC ST
-                <br />
-                VANCOUVER, BC V6Z 1C2
-                <br />
-                CANADA
+          <a
+            href="https://maps.app.goo.gl/EJhTEfN53VQ1n5wn9"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <R d="d1">
+              <div className="loc">
+                <div className="loc-k">HQ · Commercial</div>
+                <h3 className="loc-h3">
+                  <AnimatedText as="span" text="Vancouver, BC" />
+                </h3>
+                <p className="loc-p">
+                  Partnerships, commercial strategy, and investor relations.
+                </p>
+                <div className="loc-addr">
+                  804 PACIFIC ST
+                  <br />
+                  VANCOUVER, BC V6Z 1C2
+                  <br />
+                  CANADA
+                </div>
               </div>
-            </div>
-          </R>
-          <R d="d2">
-            <div className="loc">
-              <div className="loc-k">R&amp;D · Engineering</div>
-              <h3 className="loc-h3">
-                <AnimatedText as="span" text="Calgary, AB" />
-              </h3>
-              <p className="loc-p">
-                Hardware, firmware, AI, and test — at the U Calgary Life
-                Sciences Innovation Hub.
-              </p>
-              <div className="loc-addr">
-                3655 36 ST NW
-                <br />
-                CALGARY, AB T2L 1Y8
-                <br />
-                CANADA
+            </R>
+          </a>
+          <a
+            href="https://maps.app.goo.gl/uyiQbVqHkJsnzJV97"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <R d="d2">
+              <div className="loc">
+                <div className="loc-k">R&amp;D · Engineering</div>
+                <h3 className="loc-h3">
+                  <AnimatedText as="span" text="Calgary, AB" />
+                </h3>
+                <p className="loc-p">
+                  Hardware, firmware, AI, and test — at the U Calgary Life
+                  Sciences Innovation Hub.
+                </p>
+                <div className="loc-addr">
+                  3655 36 ST NW
+                  <br />
+                  CALGARY, AB T2L 1Y8
+                  <br />
+                  CANADA
+                </div>
               </div>
-            </div>
-          </R>
+            </R>
+          </a>
         </div>
       </div>
     </section>

@@ -862,10 +862,10 @@ const StartecIntelligentDetails = () => {
                 SHIPPING SINCE <b>2022</b> · DEPLOYED ON THE <b>CALYPSO ORI</b>
               </div>
               <div className="h-actions reveal d4">
-                <a href="#contact" className="btn btn-fill">
+                <a href="/contact-us" className="btn btn-fill">
                   TALK TO US <span className="a">↗</span>
                 </a>
-                <a href="#system" className="btn btn-line">
+                <a href="#cap" className="btn btn-line">
                   HOW IT WORKS <span className="a">↓</span>
                 </a>
               </div>

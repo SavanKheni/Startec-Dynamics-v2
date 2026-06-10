@@ -33,13 +33,7 @@
 }
 
 /* ── Layout ─────────────────────────────────────────────────────────────── */
-.contact-page-sections .wrap {
-    max-width: var(--maxw);
-    margin: 0 auto;
-    padding: 0 40px;
-    position: relative;
-    z-index: 3;
-}
+
 
 .contact-page-sections .sec {
     padding: 70px 0;

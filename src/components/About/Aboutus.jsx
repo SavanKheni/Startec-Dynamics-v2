@@ -100,7 +100,7 @@ function Story() {
           <p className="big">
             <AnimatedText
               as="span"
-              text=" It started with a frustration: the smartest safety technology"
+              text="It started with a frustration: the smartest safety technology"
             />{" "}
             <em className="big-em">
               <AnimatedText
@@ -264,46 +264,58 @@ function Lab() {
           </h2>
         </R>
         <div className="locs">
-          <R d="d1">
-            <div className="loc">
-              <div className="loc-k">HQ · Commercial</div>
-              <h3 className="loc-h3">
-                <AnimatedText as="span" text="Vancouver, BC" />
-              </h3>
-              <p className="loc-p">
-                Where partnerships, commercial strategy, and investor relations
-                run from. The front door of the company.
-              </p>
-              <div className="loc-addr">
-                804 PACIFIC ST
-                <br />
-                VANCOUVER, BC V6Z 1C2
-                <br />
-                CANADA
+          <a
+            href="https://maps.app.goo.gl/EJhTEfN53VQ1n5wn9"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <R d="d1">
+              <div className="loc">
+                <div className="loc-k">HQ · Commercial</div>
+                <h3 className="loc-h3">
+                  <AnimatedText as="span" text="Vancouver, BC" />
+                </h3>
+                <p className="loc-p">
+                  Where partnerships, commercial strategy, and investor
+                  relations run from. The front door of the company.
+                </p>
+                <div className="loc-addr">
+                  804 PACIFIC ST
+                  <br />
+                  VANCOUVER, BC V6Z 1C2
+                  <br />
+                  CANADA
+                </div>
               </div>
-            </div>
-          </R>
-          <R d="d2">
-            <div className="loc">
-              <div className="loc-k">R&amp;D · Engineering</div>
+            </R>
+          </a>
+          <a
+            href="https://maps.app.goo.gl/uyiQbVqHkJsnzJV97"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <R d="d2">
+              <div className="loc">
+                <div className="loc-k">R&amp;D · Engineering</div>
 
-              <h3 className="loc-h3">
-                <AnimatedText as="span" text="Calgary, AB" />
-              </h3>
-              <p className="loc-p">
-                Where the work happens — hardware, firmware, AI, and test —
-                alongside the University of Calgary's Life Sciences Innovation
-                Hub.
-              </p>
-              <div className="loc-addr">
-                3655 36 ST NW
-                <br />
-                CALGARY, AB T2L 1Y8
-                <br />
-                CANADA
+                <h3 className="loc-h3">
+                  <AnimatedText as="span" text="Calgary, AB" />
+                </h3>
+                <p className="loc-p">
+                  Where the work happens — hardware, firmware, AI, and test —
+                  alongside the University of Calgary's Life Sciences Innovation
+                  Hub.
+                </p>
+                <div className="loc-addr">
+                  3655 36 ST NW
+                  <br />
+                  CALGARY, AB T2L 1Y8
+                  <br />
+                  CANADA
+                </div>
               </div>
-            </div>
-          </R>
+            </R>
+          </a>
         </div>
       </div>
     </section>
@@ -313,28 +325,29 @@ function Lab() {
 // ─── Team §04 ─────────────────────────────────────────────────────────────────
 const teamMembers = [
   {
-    init: "IV",
-    name: "Ivan",
-    role: "Founder",
-    bio: "Two decades in the motorcycle industry — building R&D teams and bringing products to market worldwide. Founded Startec Dynamics to do it on his own terms.",
+    init: "WT",
+    name: "Wai Cheung (Ivan) Ting",
+    role: "CEO",
+    bio: "Ivan Ting is a serial entrepreneur with 25+ years of experience in technology, manufacturing, and smart mobility across Asia and Canada. He has founded and led multiple companies, focusing on product innovation, engineering, and international business growth.",
   },
+
   {
-    init: "LO",
-    name: "Lola",
-    role: "Investor Relations & Brand",
-    bio: "Leads investor relations and brand strategy, with prior roles at Alacrity Canada and Maplegro supporting startups and strategic initiatives.",
-  },
-  {
-    init: "RB",
-    name: "Rishabh",
+    init: "RG",
+    name: "Rishabh Goel",
     role: "R&D · Mechatronics & AI",
-    bio: "Mechatronics design background with a focus on AI and machine learning — Python, OpenCV, and cloud — applied to real-world engineering.",
+    bio: "Rishabh Goel is the R&D Manager at Startec Dynamics with 6+ years of experience in embedded systems, IoT, firmware, and automotive electronics. He specializes in end-to-end product development, from concept to deployment.",
   },
   {
-    init: "BA",
-    name: "Bastien",
+    init: "BS",
+    name: "Bastien Sbrovazzo",
     role: "Project Management & Ops",
-    bio: "Over a decade of project management rooted in environmental conservation, with global experience across sectors — and a genuine passion for motorcycles and innovation.",
+    bio: "With over a decade of project management experience in environmental conservation, Bastien drives impactful outcomes through innovation.",
+  },
+  {
+    init: "SH",
+    name: "Shirley Hui",
+    role: "Marketing Executive",
+    bio: "With experience as a Development Officer, Shirley focuses on meaningful environmental protection initiatives and people-centered strategies.",
   },
 ];
 

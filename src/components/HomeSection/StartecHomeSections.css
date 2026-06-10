@@ -365,7 +365,7 @@
 
 .startec-home-sections .mstep {
     position: relative;
-    padding: 0 22px;
+    padding: 10px 22px 0px 22px;
 }
 
 .startec-home-sections .mstep:not(:last-child) {

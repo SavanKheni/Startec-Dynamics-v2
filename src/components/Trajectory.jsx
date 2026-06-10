@@ -37,7 +37,7 @@ export default function Trajectory() {
         <p className="big reveal d1">
           <AnimatedText
             as="span"
-            text=" Every project moves a machine one step closer to standing on its own — first we make it "
+            text="Every project moves a machine one step closer to standing on its own — first we make it "
           />
           <AnimatedText as="em" text="aware, " />
           <AnimatedText as="span" text="then " />

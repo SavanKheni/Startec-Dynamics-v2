@@ -41,7 +41,7 @@ export default function Method() {
             marginBottom: "6px",
           }}
         >
-          <AnimatedText as="span" text=" Lab to field, on the record." />
+          <AnimatedText as="span" text="Lab to field, on the record." />
         </h2>
         <div className="track reveal d2">
           <div className="baseline" />

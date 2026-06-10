@@ -38,7 +38,7 @@ const NAV_LINKS = {
 };
 
 const NAV_CTA = {
-  "/": { href: "/contact-us", label: "START A PROJECT →" },
+  "/": { href: "/contact-us", label: "CONTACT →" },
   "/about-us": { href: "/contact-us", label: "CONTACT →" },
   "/contact-us": { href: "#form", label: "START A MESSAGE →" },
   "/startec-intelligent": { href: "#contact", label: "TALK TO US →" },

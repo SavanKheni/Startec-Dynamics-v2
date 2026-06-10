@@ -12,7 +12,7 @@ export default function Thesis() {
         <p className="big reveal d1">
           <AnimatedText
             as="span"
-            text=" Most companies pick a product, then spend years defending it. We pick"
+            text="Most companies pick a product, then spend years defending it. We pick"
           />{" "}
           <AnimatedText as="em" text="problems." />
           <AnimatedText

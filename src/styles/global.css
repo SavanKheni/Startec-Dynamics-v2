@@ -196,6 +196,20 @@ section {
   transform: translate(3px, -3px);
 }
 
+@media (max-width: 1724px) {
+  .wrap {
+    max-width: 1110px;
+
+  }
+}
+
+@media (max-width: 1630px) {
+  .wrap {
+    max-width: 1050px;
+
+  }
+}
+
 @media (max-width: 880px) {
   .wrap {
     padding: 0 24px;

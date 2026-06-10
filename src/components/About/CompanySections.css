@@ -33,13 +33,7 @@
 }
 
 /* ── Layout ─────────────────────────────────────────────────────────────── */
-.about-company-sections .wrap {
-    max-width: var(--maxw);
-    margin: 0 auto;
-    padding: 0 40px;
-    position: relative;
-    z-index: 3;
-}
+
 
 .about-company-sections .sec {
     padding: 78px 0;
@@ -304,6 +298,7 @@
     background: var(--panel);
     padding: 26px;
     transition: 0.25s;
+    height: -webkit-fill-available;
 }
 
 .about-company-sections .member-add {

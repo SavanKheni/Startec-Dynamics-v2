@@ -8,7 +8,7 @@ const AnimatedText = ({
   text,
   as: Tag = "span",
   className = "",
-  once = false,
+  once = true,
   delayStart = 0, // ← new prop, ms to wait before this span starts
 }) => {
   const textRef = useRef(null);
