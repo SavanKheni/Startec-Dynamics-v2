@@ -2,18 +2,15 @@ import { useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import "./StartecIntelligent.css";
-import siFig1 from "../../assets/siFig1.jpg";
-import siFig2 from "../../assets/siFig2.jpg";
+import siFig1 from "../../assets/fm1.jpg";
+import siFig2 from "../../assets/f-d3.png";
 import siApp1 from "../../assets/si-sonnect-1.png";
 import siApp2 from "../../assets/si-sonnect-2.png";
 import siApp3 from "../../assets/si-sonnect-3.png";
 import siApp4 from "../../assets/si-sonnect-4.png";
-import dashboardScreen from "../../assets/f-d.png";
-import dashboardScreen2 from "../../assets/f-d2.png";
-import dashboardScreen4 from "../../assets/f-d4.png";
-import dashboardScreen5 from "../../assets/f-d5.png";
-import dashboardScreen6 from "../../assets/f-d6.png";
-import dashboardScreen7 from "../../assets/f-d7.png";
+import SIIntelligent1 from "../../assets/SIIntelligent-1.png";
+import SIIntelligent2 from "../../assets/SIIntelligent-2.png";
+import SIIntelligent3 from "../../assets/SIIntelligent-3.png";
 import appIcon from "../../assets/unnamed.png";
 import AnimatedText from "../AnimatedText";
 
@@ -23,38 +20,38 @@ const CAPABILITIES = [
   {
     id: "F-01",
     d: "d1",
-    title: "Keyless Ignition",
-    body: "A secure, ultra-wideband keyless system — start, lock, and remotely control the bike from the app. The key lives in the rider's pocket, never copied, never lost.",
+    title: "Real-Time Vehicle Tracking",
+    body: "Monitor live location and movement of every vehicle with high accuracy. Stay updated with continuous tracking and instant visibility across your entire fleet.",
   },
   {
     id: "F-02",
     d: "d1",
-    title: "Geo-Tracking & Anti-Theft",
-    body: "Live location, geofencing, and remote immobilisation. If the bike moves without authorisation, the rider knows in seconds.",
+    title: "Geo-Fencing & Alerts",
+    body: "Define operational zones and receive alerts when vehicles enter or exit predefined areas. Ensure compliance and prevent unauthorized movement.",
   },
   {
     id: "F-03",
     d: "d2",
-    title: "SOS & Crash Response",
-    body: "A high-precision IMU detects a crash and automatically shares the rider's exact location with family and emergency contacts when they can't.",
+    title: "Driver Behavior Monitoring",
+    body: "Track driving patterns such as speed, harsh braking, and idle time. Improve safety and optimize performance through actionable insights.",
   },
   {
     id: "F-04",
     d: "d2",
-    title: "Ride Dashboard",
-    body: "Trips, battery and component health, and diagnostics — the whole vehicle, legible at a glance.",
+    title: "Trip History & Analytics",
+    body: "Access detailed logs of past trips, routes, and events. Analyze data to improve efficiency and operational planning.",
   },
   {
     id: "F-05",
     d: "d3",
-    title: "Over-the-Air Updates",
-    body: "New features and security patches arrive remotely. No service centre, no downtime, always current.",
+    title: "Centralized Dashboard",
+    body: "Manage all vehicles from a single interface with live status, alerts, and system controls designed for fleet operators.",
   },
   {
     id: "F-06",
     d: "d3",
-    title: "Proactive Maintenance",
-    body: "An on-board fault database flags problems before they strand a rider — small issues stay small.",
+    title: "Incident & Alert Management",
+    body: "Respond quickly to theft, violations, or emergencies with real-time notifications and detailed event tracking.",
   },
 ];
 
@@ -71,32 +68,32 @@ const STATUS_ITEMS = [
   {
     k: "● Live",
     d: "d1",
-    h: "Shipping since 2022",
-    p: "Startec Intelligent is in market, not in concept — installed, supported, and improving over the air.",
+    h: "Actively deployed",
+    p: "Fleet Management system is actively used by operators to monitor vehicles, optimize routes, and improve operational efficiency in real-time.",
   },
   {
-    k: "Partner",
+    k: "Use Case",
     d: "d1",
-    h: "Calypso Motors · ORI",
-    p: "Deployed as the connected layer on the Calypso ORI, priced to stay accessible for everyday riders.",
+    h: "Fleet operators & logistics",
+    p: "Designed for businesses managing multiple vehicles — logistics, delivery services, and mobility operators requiring full visibility.",
   },
   {
-    k: "Market",
+    k: "Impact",
     d: "d2",
-    h: "~60 million bikes a year",
-    p: "Roughly 60 million motorcycles are sold worldwide every year — the overwhelming majority with no connected safety or security at all.",
+    h: "Operational efficiency",
+    p: "Reduces downtime, improves driver accountability, and enhances fleet security through continuous monitoring and data-driven insights.",
+  },
+  {
+    k: "Scalability",
+    d: "d2",
+    h: "Built for growth",
+    p: "From small fleets to large-scale deployments, the system scales seamlessly with increasing vehicles and operational complexity.",
   },
   {
     k: "Roadmap",
-    d: "d2",
-    h: "The first stage of the trajectory",
-    p: "Project 01 is the aware stage of Startec Dynamics' wider arc. The platform, the team, and the tooling are built to carry forward into what's next.",
-  },
-  {
-    k: "On the bench",
     d: "d3",
-    h: "Blind-spot & traffic detection",
-    p: "Next in R&D: side and traffic-detection sensors that warn riders of approaching vehicles — most accidents happen when a rider never sees what's coming.",
+    h: "Advanced analytics & AI",
+    p: "Future updates include predictive maintenance, AI-based route optimization, and deeper behavioral intelligence for smarter fleet operations.",
   },
 ];
 
@@ -129,40 +126,22 @@ const SI_CONNECT_SLIDES = [
 
 const FLEET_SLIDES = [
   {
-    img: dashboardScreen2,
-    alt: "SI Fleet overview",
-    h: "Overview Screen",
-    p: "Your fleet at a glance. Track active bikes, system alerts, user counts, and trip data through live KPI cards, comparative charts, and an interactive accident map — all consolidated in one command center.",
+    img: SIIntelligent1,
+    alt: "SI Connect locate and status",
+    h: "Smart Protection, Always On",
+    p: "SI Intelligent secures your motorcycle with continuous real-time monitoring and instant threat detection. It alerts you to unusual activity before issues escalate. Whether parked at home or outside, your vehicle stays protected with fast, reliable system response.",
   },
   {
-    img: dashboardScreen7,
-    alt: "SI Fleet live tracking",
-    h: "GPS Tracking",
-    p: "Monitor every vehicle with precision. Search by VIN to visualize routes, track engine and lock status, analyze IMU and speed data, and export records — giving you full visibility over movement and behavior.",
+    img: SIIntelligent2,
+    alt: "SI Connect theft detection",
+    h: "Real-Time Tracking & Alerts",
+    p: "Stay connected to your motorcycle with real-time tracking and instant alerts. Get notified of unauthorized movement or suspicious activity and view live location in the app. Every movement is recorded, keeping you informed, aware, and in control at all times.",
   },
   {
-    img: dashboardScreen,
-    alt: "SI Fleet driver management",
-    h: "Live Tracking",
-    p: "Complete real-time oversight of your entire fleet. Monitor vehicle positions, health, and activity as they happen — reducing operational costs, improving response times, and keeping every journey accountable.",
-  },
-  {
-    img: dashboardScreen6,
-    alt: "SI Fleet alerts",
-    h: "Alerts Notifications",
-    p: "Stay ahead of critical events. An interactive accident map and live alert list surface incidents by urgency — letting you assess driver status, view locations, and initiate contact the moment something happens.",
-  },
-  {
-    img: dashboardScreen4,
-    alt: "SI Fleet driver management",
-    h: "Driver Management",
-    p: "Centralize control of your fleet assets. Monitor theft and accident events, assign hardware to owners, and manage user permissions — all from a single panel built for fast, reliable fleet administration.",
-  },
-  {
-    img: dashboardScreen5,
-    alt: "SI Fleet geo-fencing",
-    h: "Geo-Fencing Module",
-    p: "Define boundaries, get instant alerts. Track zone entry and exit events in real time, manage perimeters on an interactive map, and review incident history — keeping your fleet secure and always within bounds.",
+    img: SIIntelligent3,
+    alt: "SI Connect alerts and commands",
+    h: "Vehicle Maintenance",
+    p: "Access trip history, alerts, and event logs anytime. Review activity patterns and monitor your motorcycle remotely with ease. SI Intelligent offers a simple, user-friendly system designed to keep you informed, in control, and confident about your vehicle’s safety.",
   },
 ];
 
@@ -196,10 +175,10 @@ function SectionHead({ no, label }) {
   );
 }
 
-function PhotoFigure({ src, alt, caption, tag, style }) {
+function PhotoFigure({ src, alt, caption, tag, style, imgStyle }) {
   return (
     <div className="photo reveal" style={style}>
-      <img src={src} alt={alt} />
+      <img src={src} alt={alt} style={imgStyle} />
       <div className="cap">
         <span>{caption}</span>
         <b>{tag}</b>
@@ -833,7 +812,7 @@ function Carousel({ interval = 4500, tag, slides }) {
 
 /* ─── Main Component ────────────────────────────────────────────────────── */
 
-const StartecIntelligentDetails = () => {
+const FleetManagementDetails = () => {
   useReveal();
 
   return (
@@ -847,15 +826,15 @@ const StartecIntelligentDetails = () => {
                 <b>●</b> PROJECT 01 · FILE OPEN <b>/</b> STATUS: SHIPPING
               </div>
               <h1 className="reveal d2">
-                <AnimatedText as="span" text="Startec" />
+                <AnimatedText as="span" text="Fleet" />
                 <br />
-                <AnimatedText as="span" text="Intelligent" />
+                <AnimatedText as="span" text="Management" />
               </h1>
               <p className="tag reveal d3">
-                The intelligence layer for light vehicles —{" "}
+                A unified control system for modern fleets —{" "}
                 <span className="soft">
-                  security, safety, and over-the-air smarts, added to the
-                  machines people ride every day.
+                  real-time tracking, operational visibility, and intelligent
+                  monitoring built for scale and reliability.
                 </span>
               </p>
               <div className="meta reveal d3">
@@ -891,28 +870,25 @@ const StartecIntelligentDetails = () => {
           </p>
           <div className="cols">
             <p className="reveal d1">
-              <b>
-                Officially the Startec Intelligent Smart Safety &amp; Security
-                System
-              </b>
-              , it bolts the brains of a modern vehicle onto the bikes people
-              already buy. It tracks speed, impact, location, and riding
-              behaviour — and the moment it detects a crash, it can alert family
-              and emergency contacts in the minutes that matter most.
+              <b>Startec Fleet Management System</b> delivers complete
+              visibility over vehicles, drivers, and operations through a
+              centralized platform. It combines real-time tracking, geofencing,
+              and live alerts to ensure fleets stay secure, efficient, and fully
+              monitored at all times.
             </p>
             <p className="reveal d2">
-              It's built to be{" "}
-              <b>fitted at the factory or retrofitted in the field</b>, on
-              petrol or electric machines alike. That makes advanced safety and
-              security reachable for the riders and operators who've never had
-              access to it — the whole point of Project 01.
+              Built for scalability, the system enables operators to manage
+              multiple vehicles with precision — from route tracking and
+              behavior analysis to incident response and reporting. It
+              transforms raw movement data into actionable insights for smarter
+              decision-making.
             </p>
           </div>
           <PhotoFigure
             src={siFig1}
-            alt="Startec Intelligent on-board unit installed on a motorcycle"
-            caption="FIG. A — STARTEC INTELLIGENT · ON-BOARD UNIT, INSTALLED"
-            tag="HARDWARE"
+            alt="SI Fleet Management dashboard interface overview"
+            caption="FIG. A — SI FLEET MANAGEMENT · DASHBOARD INTERFACE OVERVIEW"
+            tag="SOFTWARE"
             style={{ marginTop: "36px" }}
           />
         </div>
@@ -947,10 +923,10 @@ const StartecIntelligentDetails = () => {
             <AnimatedText as="span" text="How the system fits together." />
           </h2>
           <PhotoFigure
-            src={siFig2}
-            alt="Startec Intelligent hardware fitted to the vehicle"
-            caption="FIG. B — THE HARDWARE, FITTED TO THE VEHICLE"
-            tag="HARDWARE"
+            src={siFig1}
+            alt="SI Fleet Management GPS tracking and analytics interface"
+            caption="FIG. B — SI FLEET MANAGEMENT · GPS TRACKING & ANALYTICS VIEW"
+            tag="SOFTWARE"
             style={{ marginBottom: "28px" }}
           />
           <SystemDiagram />
@@ -999,7 +975,7 @@ const StartecIntelligentDetails = () => {
       {/* ── INTERFACE §04 ── */}
       <section className="sec" id="interface">
         <div className="wrap">
-          <SectionHead no="§04" label="Interface — As It Ships" />
+          <SectionHead no="§04" label="Interface — Fleet System" />
           <h2 className="sys-h reveal d1">
             <AnimatedText as="span" text="The product, as it looks today." />
           </h2>
@@ -1016,6 +992,7 @@ const StartecIntelligentDetails = () => {
             and the SI Fleet Management console operators use to oversee whole
             fleets. They cycle automatically; hover to pause.
           </p>
+
           <div
             className=""
             style={{ display: "flex", justifyContent: "space-between" }}
@@ -1039,17 +1016,18 @@ const StartecIntelligentDetails = () => {
             style={{ display: "flex", justifyContent: "space-between" }}
           >
             <div className="grouplbl reveal">
-              <b>B.</b> SI FLEET MANAGEMENT · OPERATOR CONSOLE
+              <b>B.</b> Startec · Intelligent
             </div>
-            <a className="" href="/fleet-management">
+            <a className="" href="/startec-intelligent">
               <div className="act">
                 OPEN FILE <span className="a">↗</span>
               </div>
             </a>
           </div>
+
           <Carousel
             interval={5000}
-            tag="SI FLEET · OPERATOR"
+            tag="Startec · Intelligent"
             slides={FLEET_SLIDES}
           />
         </div>
@@ -1108,4 +1086,4 @@ const StartecIntelligentDetails = () => {
   );
 };
 
-export default StartecIntelligentDetails;
+export default FleetManagementDetails;

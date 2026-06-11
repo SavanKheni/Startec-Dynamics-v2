@@ -2,12 +2,11 @@ import { useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import "./StartecIntelligent.css";
-import siFig1 from "../../assets/siFig1.jpg";
-import siFig2 from "../../assets/siFig2.jpg";
-import siApp1 from "../../assets/si-sonnect-1.png";
-import siApp2 from "../../assets/si-sonnect-2.png";
-import siApp3 from "../../assets/si-sonnect-3.png";
-import siApp4 from "../../assets/si-sonnect-4.png";
+import siFig1 from "../../assets/si-sonnect-1.png";
+import siFig2 from "../../assets/si-sonnect-2.png";
+import SIIntelligent1 from "../../assets/SIIntelligent-1.png";
+import SIIntelligent2 from "../../assets/SIIntelligent-2.png";
+import SIIntelligent3 from "../../assets/SIIntelligent-3.png";
 import dashboardScreen from "../../assets/f-d.png";
 import dashboardScreen2 from "../../assets/f-d2.png";
 import dashboardScreen4 from "../../assets/f-d4.png";
@@ -23,38 +22,38 @@ const CAPABILITIES = [
   {
     id: "F-01",
     d: "d1",
-    title: "Keyless Ignition",
-    body: "A secure, ultra-wideband keyless system — start, lock, and remotely control the bike from the app. The key lives in the rider's pocket, never copied, never lost.",
+    title: "Real-Time Vehicle Tracking",
+    body: "Track your motorcycle live with precise location data, movement history, and route visualization directly from the app.",
   },
   {
     id: "F-02",
     d: "d1",
-    title: "Geo-Tracking & Anti-Theft",
-    body: "Live location, geofencing, and remote immobilisation. If the bike moves without authorisation, the rider knows in seconds.",
+    title: "Security & Theft Alerts",
+    body: "Receive instant notifications for unauthorized movement or suspicious activity, ensuring your vehicle stays protected at all times.",
   },
   {
     id: "F-03",
     d: "d2",
-    title: "SOS & Crash Response",
-    body: "A high-precision IMU detects a crash and automatically shares the rider's exact location with family and emergency contacts when they can't.",
+    title: "Remote Commands",
+    body: "Control key vehicle functions remotely — from locking systems to activating features — all through a simple, responsive interface.",
   },
   {
     id: "F-04",
     d: "d2",
-    title: "Ride Dashboard",
-    body: "Trips, battery and component health, and diagnostics — the whole vehicle, legible at a glance.",
+    title: "Trip & Activity History",
+    body: "Review past rides, routes, and events with detailed logs that help you understand usage patterns and vehicle activity.",
   },
   {
     id: "F-05",
     d: "d3",
-    title: "Over-the-Air Updates",
-    body: "New features and security patches arrive remotely. No service centre, no downtime, always current.",
+    title: "Smart Notifications",
+    body: "Stay updated with system alerts, updates, and important events, ensuring you never miss critical information about your vehicle.",
   },
   {
     id: "F-06",
     d: "d3",
-    title: "Proactive Maintenance",
-    body: "An on-board fault database flags problems before they strand a rider — small issues stay small.",
+    title: "Essential Services Access",
+    body: "Locate nearby fuel stations, medical facilities, and support services with integrated maps and real-time information.",
   },
 ];
 
@@ -71,59 +70,53 @@ const STATUS_ITEMS = [
   {
     k: "● Live",
     d: "d1",
-    h: "Shipping since 2022",
-    p: "Startec Intelligent is in market, not in concept — installed, supported, and improving over the air.",
+    h: "Available to riders",
+    p: "SI Connect is actively used by riders to monitor, control, and manage their vehicles in real time through a seamless mobile experience.",
   },
   {
-    k: "Partner",
+    k: "Platform",
     d: "d1",
-    h: "Calypso Motors · ORI",
-    p: "Deployed as the connected layer on the Calypso ORI, priced to stay accessible for everyday riders.",
+    h: "Mobile-first experience",
+    p: "Designed for Android devices, the app delivers fast, reliable performance with an intuitive interface built for everyday use.",
   },
   {
-    k: "Market",
+    k: "Integration",
     d: "d2",
-    h: "~60 million bikes a year",
-    p: "Roughly 60 million motorcycles are sold worldwide every year — the overwhelming majority with no connected safety or security at all.",
+    h: "Connected with SI hardware",
+    p: "Works in sync with Startec Intelligent hardware to deliver accurate data, alerts, and remote functionality.",
+  },
+  {
+    k: "Experience",
+    d: "d2",
+    h: "User-centric design",
+    p: "Simplifies complex vehicle data into a clean, easy-to-understand interface that keeps riders informed and in control.",
   },
   {
     k: "Roadmap",
-    d: "d2",
-    h: "The first stage of the trajectory",
-    p: "Project 01 is the aware stage of Startec Dynamics' wider arc. The platform, the team, and the tooling are built to carry forward into what's next.",
-  },
-  {
-    k: "On the bench",
     d: "d3",
-    h: "Blind-spot & traffic detection",
-    p: "Next in R&D: side and traffic-detection sensors that warn riders of approaching vehicles — most accidents happen when a rider never sees what's coming.",
+    h: "Enhanced insights & automation",
+    p: "Future updates include smarter notifications, predictive insights, and deeper personalization for rider behavior and preferences.",
   },
 ];
 
 const SI_CONNECT_SLIDES = [
   {
-    img: siApp1,
+    img: SIIntelligent1,
     alt: "SI Connect locate and status",
-    h: "Vehicle Location",
-    p: "Stay connected to your bike from anywhere. Monitor real-time location, view travel history, control key systems, and plan ahead with nearby gas stations and live weather — all from one intuitive dashboard.",
+    h: "Smart Protection, Always On",
+    p: "SI Intelligent secures your motorcycle with continuous real-time monitoring and instant threat detection. It alerts you to unusual activity before issues escalate. Whether parked at home or outside, your vehicle stays protected with fast, reliable system response.",
   },
   {
-    img: siApp2,
+    img: SIIntelligent2,
     alt: "SI Connect theft detection",
-    h: "Security & System Notifications",
-    p: "Get instant alerts when it matters most. Respond to theft events in real time, confirm incidents directly from the app, and stay up to date with system notifications ensuring you always have the latest features.",
+    h: "Real-Time Tracking & Alerts",
+    p: "Stay connected to your motorcycle with real-time tracking and instant alerts. Get notified of unauthorized movement or suspicious activity and view live location in the app. Every movement is recorded, keeping you informed, aware, and in control at all times.",
   },
   {
-    img: siApp3,
+    img: SIIntelligent3,
     alt: "SI Connect alerts and commands",
-    h: "Notification & Command History",
-    p: "Keep a clear record of every event and action. Review collision alerts with timestamps and locations, and track past commands — unlocking, lighting, engine changes — to confirm everything executed as intended.",
-  },
-  {
-    img: siApp4,
-    alt: "SI Connect nearby help",
-    h: "Essential Services Locator",
-    p: "Find what you need, fast. Locate nearby gas stations and medical facilities with live status, addresses, contact numbers, and direct map links — so you are never without support when you need it most.",
+    h: "Vehicle Maintenance",
+    p: "Access trip history, alerts, and event logs anytime. Review activity patterns and monitor your motorcycle remotely with ease. SI Intelligent offers a simple, user-friendly system designed to keep you informed, in control, and confident about your vehicle’s safety.",
   },
 ];
 
@@ -833,7 +826,7 @@ function Carousel({ interval = 4500, tag, slides }) {
 
 /* ─── Main Component ────────────────────────────────────────────────────── */
 
-const StartecIntelligentDetails = () => {
+const SiConnectDetails = () => {
   useReveal();
 
   return (
@@ -847,15 +840,14 @@ const StartecIntelligentDetails = () => {
                 <b>●</b> PROJECT 01 · FILE OPEN <b>/</b> STATUS: SHIPPING
               </div>
               <h1 className="reveal d2">
-                <AnimatedText as="span" text="Startec" />
-                <br />
-                <AnimatedText as="span" text="Intelligent" />
+                <AnimatedText as="span" text="SI " />
+                <AnimatedText as="span" text="Connect" />
               </h1>
               <p className="tag reveal d3">
-                The intelligence layer for light vehicles —{" "}
+                The rider’s interface to the vehicle —{" "}
                 <span className="soft">
-                  security, safety, and over-the-air smarts, added to the
-                  machines people ride every day.
+                  real-time control, tracking, alerts, and insights delivered
+                  through a seamless mobile experience.
                 </span>
               </p>
               <div className="meta reveal d3">
@@ -891,28 +883,25 @@ const StartecIntelligentDetails = () => {
           </p>
           <div className="cols">
             <p className="reveal d1">
-              <b>
-                Officially the Startec Intelligent Smart Safety &amp; Security
-                System
-              </b>
-              , it bolts the brains of a modern vehicle onto the bikes people
-              already buy. It tracks speed, impact, location, and riding
-              behaviour — and the moment it detects a crash, it can alert family
-              and emergency contacts in the minutes that matter most.
+              <b>SI Connect</b> is the rider’s direct connection to their
+              vehicle — a mobile application designed to provide real-time
+              visibility, control, and awareness. From tracking location to
+              monitoring system status, everything is accessible in a single,
+              intuitive interface.
             </p>
+
             <p className="reveal d2">
-              It's built to be{" "}
-              <b>fitted at the factory or retrofitted in the field</b>, on
-              petrol or electric machines alike. That makes advanced safety and
-              security reachable for the riders and operators who've never had
-              access to it — the whole point of Project 01.
+              Built to simplify everyday riding, the app delivers instant
+              alerts, trip insights, and remote commands while keeping riders
+              informed and in control at all times. It transforms complex
+              vehicle data into a clear, actionable experience.
             </p>
           </div>
           <PhotoFigure
             src={siFig1}
-            alt="Startec Intelligent on-board unit installed on a motorcycle"
-            caption="FIG. A — STARTEC INTELLIGENT · ON-BOARD UNIT, INSTALLED"
-            tag="HARDWARE"
+            alt="SI Connect mobile app interface showing vehicle control and live location"
+            caption="FIG. A — SI CONNECT · MOBILE APP INTERFACE"
+            tag="Mobile App"
             style={{ marginTop: "36px" }}
           />
         </div>
@@ -948,8 +937,8 @@ const StartecIntelligentDetails = () => {
           </h2>
           <PhotoFigure
             src={siFig2}
-            alt="Startec Intelligent hardware fitted to the vehicle"
-            caption="FIG. B — THE HARDWARE, FITTED TO THE VEHICLE"
+            alt="SI Connect mobile app alert and notification interface"
+            caption="FIG. B — SI CONNECT · ALERT & NOTIFICATION INTERFACE"
             tag="HARDWARE"
             style={{ marginBottom: "28px" }}
           />
@@ -999,7 +988,7 @@ const StartecIntelligentDetails = () => {
       {/* ── INTERFACE §04 ── */}
       <section className="sec" id="interface">
         <div className="wrap">
-          <SectionHead no="§04" label="Interface — As It Ships" />
+          <SectionHead no="§04" label="Interface — Rider Experience" />
           <h2 className="sys-h reveal d1">
             <AnimatedText as="span" text="The product, as it looks today." />
           </h2>
@@ -1021,9 +1010,9 @@ const StartecIntelligentDetails = () => {
             style={{ display: "flex", justifyContent: "space-between" }}
           >
             <div className="grouplbl reveal">
-              <b>A.</b> SI CONNECT · RIDER APP
+              <b>A.</b> Startec · Intelligent
             </div>
-            <a className="" href="/si-connect">
+            <a className="" href="/startec-intelligent">
               <div className="act">
                 OPEN FILE <span className="a">↗</span>
               </div>
@@ -1031,7 +1020,7 @@ const StartecIntelligentDetails = () => {
           </div>
           <Carousel
             interval={4500}
-            tag="SI CONNECT · RIDER"
+            tag="Startec · Intelligent"
             slides={SI_CONNECT_SLIDES}
           />
           <div
@@ -1108,4 +1097,4 @@ const StartecIntelligentDetails = () => {
   );
 };
 
-export default StartecIntelligentDetails;
+export default SiConnectDetails;

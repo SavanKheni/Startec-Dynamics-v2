@@ -977,3 +977,19 @@
         padding: 20px;
     }
 }
+
+.act {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--ink);
+}
+
+.act:hover {
+    color: var(--red);
+}

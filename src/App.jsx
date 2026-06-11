@@ -15,7 +15,9 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import StartecIntelligent from "./pages/StartecIntelligent";
+import SiConnect from "./pages/SiConnect";
 import Press from "./pages/Press";
+import FleetManagement from "./pages/FleetManagement";
 
 export default function App() {
   useReveal();
@@ -53,6 +55,8 @@ export default function App() {
           <Route path="/about-us" element={<About />} />
           <Route path="/contact-us" element={<Contact />} />
           <Route path="/startec-intelligent" element={<StartecIntelligent />} />
+          <Route path="/si-connect" element={<SiConnect />} />
+          <Route path="/fleet-management" element={<FleetManagement />} />
           <Route path="/press" element={<Press />} />
         </Routes>
       </main>

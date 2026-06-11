@@ -6,6 +6,8 @@ export default function SheetFrame() {
   const SHEET_CONFIG = {
     "/": { number: "01", name: "HOME" },
     "/startec-intelligent": { number: "02", name: "STARTEC INTELLIGENT" },
+    "/fleet-management": { number: "02", name: "FLEET MANAGEMENT" },
+    "/si-connect": { number: "02", name: "SI CONNECT" },
     "/about-us": { number: "03", name: "ABOUT" },
     "/press": { number: "04", name: "PRESS" },
     "/contact-us": { number: "05", name: "CONTACT" },
