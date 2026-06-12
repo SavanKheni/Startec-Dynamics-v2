@@ -68,22 +68,30 @@ function ContactForm() {
     name: "",
     email: "",
     org: "",
+    country: "",
     type: "General",
     msg: "",
   });
 
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
-
+  const [sent, setSent] = useState(false);
   const sendMail = () => {
     const subject = `[${form.type}] enquiry${form.name ? ` from ${form.name}` : ""}`;
     const body =
       `Name: ${form.name}\nEmail: ${form.email}` +
       (form.org ? `\nOrganisation: ${form.org}` : "") +
-      `\nType: ${form.type}\n\n${form.msg}`;
-    window.location.href = `mailto:info@startecdynamics.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  };
+      (form.country ? `\nCountry: ${form.country}` : "") +
+      `\nEnquiry Category: ${form.type}\n\n${form.msg}`;
 
+    const a = document.createElement("a");
+    a.href = `mailto:savankheni400@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+
+    setSent(true);
+  };
   return (
     <section className="sec" id="form">
       <div className="wrap">
@@ -138,6 +146,20 @@ function ContactForm() {
                 />
               </div>
               <div className="field">
+                <label className="label" htmlFor="f-country">
+                  Country
+                </label>
+                <input
+                  id="f-country"
+                  name="country"
+                  type="text"
+                  placeholder="Your country"
+                  value={form.country}
+                  onChange={handleChange}
+                  className="input"
+                />
+              </div>
+              <div className="field">
                 <label className="label" htmlFor="f-type">
                   Enquiry type
                 </label>
@@ -150,8 +172,12 @@ function ContactForm() {
                 >
                   {[
                     "General",
+                    "Marketing",
+                    "Investor",
+                    "Customer",
+                    "Dealer",
+                    "Technical",
                     "Partnership / OEM",
-                    "Investment",
                     "Press & media",
                     "Careers",
                   ].map((o) => (
@@ -173,9 +199,17 @@ function ContactForm() {
                 />
               </div>
               <div className="field-full">
-                <button onClick={sendMail} className="send-btn">
-                  SEND MESSAGE <span className="arrow">↗</span>
-                </button>
+                {sent ? (
+                  <div className="form-success">
+                    <span className="success-icon">✓</span>
+                    Your message is ready — complete the send in your email
+                    client.
+                  </div>
+                ) : (
+                  <button onClick={sendMail} className="send-btn">
+                    SEND MESSAGE <span className="arrow">↗</span>
+                  </button>
+                )}
                 <div className="form-note">
                   // Opens your email client, addressed to the Startec Dynamics
                   team.

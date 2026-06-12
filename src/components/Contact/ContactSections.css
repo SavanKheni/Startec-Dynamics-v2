@@ -441,3 +441,20 @@
         padding: 50px 0 0;
     }
 }
+
+.form-success {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 18px;
+    border: 1.5px solid #1B1A16;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: #1B1A16;
+    letter-spacing: 0.02em;
+}
+
+.success-icon {
+    font-size: 16px;
+    color: #D6341C;
+}
