@@ -341,10 +341,11 @@ const Arrow = ({ d, delay, labelX, labelY, labelText, points }) => (
       d={d}
       fill="none"
       stroke="#D6341C"
+      className="flow"
       strokeWidth={2}
       strokeDasharray="6 4"
-      initial={{ pathLength: 0 }}
-      whileInView={{ pathLength: 1 }}
+      initial={{ strokeDashoffset: 1000 }}
+      whileInView={{ strokeDashoffset: 0 }}
       viewport={{ once: false, margin: "-80px" }}
       transition={{ duration: 0.7, delay, ease: "easeInOut" }}
     />
@@ -1069,10 +1070,7 @@ const FleetManagementDetails = () => {
               </em>
             </h2>
             <div className="row">
-              <a
-                href="mailto:info@startecdynamics.com"
-                className="btn btn-fill"
-              >
+              <a href="/contact-us" className="btn btn-fill">
                 TALK TO US <span className="a">↗</span>
               </a>
               <span className="mono">

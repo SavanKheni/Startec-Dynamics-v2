@@ -334,7 +334,7 @@ const teamMembers = [
   {
     init: "RG",
     name: "Rishabh Goel",
-    role: "R&D · Mechatronics & AI",
+    role: "R&D Manager · Mechatronics & AI",
     bio: "Rishabh Goel is the R&D Manager at Startec Dynamics with 6+ years of experience in embedded systems, IoT, firmware, and automotive electronics. He specializes in end-to-end product development, from concept to deployment.",
   },
   {
@@ -376,16 +376,7 @@ function Team() {
               </div>
             </R>
           ))}
-          <R d="d2">
-            <div className="member-add">
-              <div className="mg-dashed">+</div>
-              <h4 className="member-h4 member-h4-soft">Engineering</h4>
-              <p className="member-p member-p-mt">
-                Firmware, hardware, app, and test engineers across both sites.
-                Add bios &amp; photos.
-              </p>
-            </div>
-          </R>
+
           <R d="d3">
             <div className="member-add">
               <div className="mg-dashed">+</div>
@@ -420,7 +411,7 @@ function BottomCTA() {
         </h2>
 
         <div class="row">
-          <a href="mailto:info@startecdynamics.com" class="btn">
+          <a href="/contact-us" class="btn">
             TALK TO US <span class="a">↗</span>
           </a>
           <span class="mono">info@startecdynamics.com</span>
