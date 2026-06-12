@@ -75,8 +75,17 @@ export default function Footer() {
         <div className="foot-end">
           <span>© 2026 Startec Dynamics Inc. — All rights reserved.</span>
           <span>
-            <a href="#">Instagram</a> · <a href="#">LinkedIn</a> ·{" "}
-            <a href="mailto:info@startecdynamics.com">Email</a>
+            <a href="https://www.youtube.com/@CalypsoMotors" target="_blank">
+              Youtube
+            </a>{" "}
+            ·{" "}
+            <a
+              href="https://www.linkedin.com/company/startec-dynamics-2022/"
+              target="_blank"
+            >
+              LinkedIn
+            </a>{" "}
+            · <a href="mailto:info@startecdynamics.com">Email</a>
           </span>
         </div>
       </div>

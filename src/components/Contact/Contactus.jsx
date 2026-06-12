@@ -289,13 +289,13 @@ function FindUs() {
           <SecHead no="§03" nm="Find Us" />
         </R>
         <div className="locs">
-          <a
-            href="https://maps.app.goo.gl/EJhTEfN53VQ1n5wn9"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <R d="d1">
-              <div className="loc">
+          <R d="d1">
+            <div className="loc">
+              <a
+                href="https://maps.app.goo.gl/EJhTEfN53VQ1n5wn9"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <div className="loc-k">HQ · Commercial</div>
                 <h3 className="loc-h3">
                   <AnimatedText as="span" text="Vancouver, BC" />
@@ -310,16 +310,17 @@ function FindUs() {
                   <br />
                   CANADA
                 </div>
-              </div>
-            </R>
-          </a>
-          <a
-            href="https://maps.app.goo.gl/uyiQbVqHkJsnzJV97"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <R d="d2">
-              <div className="loc">
+              </a>
+            </div>
+          </R>
+
+          <R d="d2">
+            <div className="loc">
+              <a
+                href="https://maps.app.goo.gl/uyiQbVqHkJsnzJV97"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <div className="loc-k">R&amp;D · Engineering</div>
                 <h3 className="loc-h3">
                   <AnimatedText as="span" text="Calgary, AB" />
@@ -335,9 +336,9 @@ function FindUs() {
                   <br />
                   CANADA
                 </div>
-              </div>
-            </R>
-          </a>
+              </a>
+            </div>
+          </R>
         </div>
       </div>
     </section>

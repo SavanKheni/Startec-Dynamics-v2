@@ -661,7 +661,7 @@ function ProjectsSection() {
             <div className="act">ACCESS RESTRICTED</div>
           </div>
 
-          <a href="#about" className="file slot reveal d3">
+          <a href="/contact-us" className="file slot reveal d3">
             <div className="id">
               PROJECT ——
               <span className="st">+ OPEN SLOT</span>

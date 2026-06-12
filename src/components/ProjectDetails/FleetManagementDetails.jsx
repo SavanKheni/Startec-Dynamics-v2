@@ -60,7 +60,7 @@ const UNIT_SPECS = [
   ["Location", "Multi-GNSS"],
   ["Connectivity", "LTE + SMS fallback"],
   ["Short range", "BLE 5 + UWB keyless"],
-  ["Sensing", "6-axis IMU"],
+  ["Sensing", "i-oxis IMU"],
   ["Power", "Vehicle + deep-sleep modes"],
 ];
 
@@ -429,7 +429,7 @@ function SystemDiagram() {
                 "▪ Multi-GNSS positioning",
                 "▪ LTE modem + SMS fallback",
                 "▪ Bluetooth LE 5",
-                "▪ 6-axis IMU (crash/motion)",
+                "▪ i-oxis IMU (crash/motion)",
               ].map((t, i) => (
                 <text
                   key={t}
@@ -590,7 +590,7 @@ function SystemDiagram() {
         {/* Arrow: OBU → SI Connect (BLE direct) — delay 0.9 */}
         <Arrow
           d="M310 190 L720 120"
-          points="720,120 706,114 710,127"
+          points="720,120 707.2,128.3 705.2,116.4"
           delay={0.9}
           labelX={470}
           labelY={143}
@@ -600,7 +600,7 @@ function SystemDiagram() {
         {/* Arrow: OBU → Cloud (LTE) — delay 1.0 */}
         <Arrow
           d="M310 270 L430 273"
-          points="430,273 416,267 416,279"
+          points="430,273 415.9,278.6 416.2,266.7"
           delay={1.0}
           labelX={330}
           labelY={262}
@@ -610,7 +610,7 @@ function SystemDiagram() {
         {/* Arrow: Cloud → SI Connect (OTA) — delay 1.2 */}
         <Arrow
           d="M610 250 L720 150"
-          points="720,150 706,150 713,162"
+          points="720,150 713.7,163.9 705.6,155"
           delay={1.2}
           labelX={616}
           labelY={196}
@@ -620,7 +620,7 @@ function SystemDiagram() {
         {/* Arrow: Cloud → SI Operator (Fleet Data) — delay 1.3 */}
         <Arrow
           d="M610 300 L720 340"
-          points="720,340 706,332 705,345"
+          points="720,340 704.8,340.9 708.9,329.6"
           delay={1.3}
           labelX={616}
           labelY={328}
@@ -636,7 +636,7 @@ function Carousel({ interval = 4500, tag, slides }) {
   const rootRef = useRef(null);
   const timerRef = useRef(null);
   const idxRef = useRef(0);
-  const pausedRef = useRef(false);
+  // const pausedRef = useRef(false);
 
   // Store callbacks in refs so event listeners never go stale
   const goRef = useRef(null);
@@ -668,7 +668,7 @@ function Carousel({ interval = 4500, tag, slides }) {
         bar.style.animation = "none";
         void bar.offsetWidth;
         bar.style.animation = `carbar ${interval}ms linear`;
-        if (pausedRef.current) bar.style.animationPlayState = "paused";
+        // if (pausedRef.current) bar.style.animationPlayState = "paused";
       }
     },
     [interval],
@@ -727,19 +727,19 @@ function Carousel({ interval = 4500, tag, slides }) {
     root.querySelector(".nav-prev")?.addEventListener("click", prevHandler);
     root.querySelector(".nav-next")?.addEventListener("click", nextHandler);
 
-    const onEnter = () => {
-      pausedRef.current = true;
-      stop();
-      const bar = root.querySelector(".car-bar i");
-      if (bar) bar.style.animationPlayState = "paused";
-    };
-    const onLeave = () => {
-      pausedRef.current = false;
-      playRef.current();
-    };
+    // const onEnter = () => {
+    //   pausedRef.current = true;
+    //   stop();
+    //   const bar = root.querySelector(".car-bar i");
+    //   if (bar) bar.style.animationPlayState = "paused";
+    // };
+    // const onLeave = () => {
+    //   pausedRef.current = false;
+    //   playRef.current();
+    // };
 
-    root.addEventListener("mouseenter", onEnter);
-    root.addEventListener("mouseleave", onLeave);
+    // root.addEventListener("mouseenter", onEnter);
+    // root.addEventListener("mouseleave", onLeave);
 
     return () => {
       stop();
@@ -752,8 +752,8 @@ function Carousel({ interval = 4500, tag, slides }) {
       root
         .querySelector(".nav-next")
         ?.removeEventListener("click", nextHandler);
-      root.removeEventListener("mouseenter", onEnter);
-      root.removeEventListener("mouseleave", onLeave);
+      // root.removeEventListener("mouseenter", onEnter);
+      // root.removeEventListener("mouseleave", onLeave);
     };
   }, []); // ← empty deps: runs once, refs handle staleness
 
@@ -839,7 +839,8 @@ const FleetManagementDetails = () => {
                 </span>
               </p>
               <div className="meta reveal d3">
-                SHIPPING SINCE <b>2022</b> · DEPLOYED ON THE <b>CALYPSO ORI</b>
+                SHIPPING SINCE <b>2022</b> · DEPLOYED ON THE{" "}
+                <b>CALYPSO MOTORCYCLES</b>
               </div>
               <div className="h-actions reveal d4">
                 <a href="/contact-us" className="btn btn-fill">

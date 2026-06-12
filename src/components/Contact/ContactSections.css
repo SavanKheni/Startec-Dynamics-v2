@@ -289,6 +289,7 @@
     flex-direction: column;
     text-decoration: none;
     color: inherit;
+    height: 100%;
 }
 
 .contact-page-sections .route:hover {
@@ -354,6 +355,7 @@
     background: var(--panel);
     padding: 28px;
     transition: 0.25s;
+    height: 100%;
 }
 
 .contact-page-sections .loc-k {

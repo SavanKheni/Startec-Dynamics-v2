@@ -264,13 +264,13 @@ function Lab() {
           </h2>
         </R>
         <div className="locs">
-          <a
-            href="https://maps.app.goo.gl/EJhTEfN53VQ1n5wn9"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <R d="d1">
-              <div className="loc">
+          <R d="d1">
+            <div className="loc">
+              <a
+                href="https://maps.app.goo.gl/EJhTEfN53VQ1n5wn9"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <div className="loc-k">HQ · Commercial</div>
                 <h3 className="loc-h3">
                   <AnimatedText as="span" text="Vancouver, BC" />
@@ -286,16 +286,17 @@ function Lab() {
                   <br />
                   CANADA
                 </div>
-              </div>
-            </R>
-          </a>
-          <a
-            href="https://maps.app.goo.gl/uyiQbVqHkJsnzJV97"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <R d="d2">
-              <div className="loc">
+              </a>
+            </div>
+          </R>
+
+          <R d="d2">
+            <div className="loc">
+              <a
+                href="https://maps.app.goo.gl/uyiQbVqHkJsnzJV97"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <div className="loc-k">R&amp;D · Engineering</div>
 
                 <h3 className="loc-h3">
@@ -313,9 +314,9 @@ function Lab() {
                   <br />
                   CANADA
                 </div>
-              </div>
-            </R>
-          </a>
+              </a>
+            </div>
+          </R>
         </div>
       </div>
     </section>
@@ -327,7 +328,7 @@ const teamMembers = [
   {
     init: "WT",
     name: "Wai Cheung (Ivan) Ting",
-    role: "CEO",
+    role: "CEO & FOUNDER",
     bio: "Ivan Ting is a serial entrepreneur with 25+ years of experience in technology, manufacturing, and smart mobility across Asia and Canada. He has founded and led multiple companies, focusing on product innovation, engineering, and international business growth.",
   },
 
