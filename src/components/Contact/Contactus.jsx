@@ -85,7 +85,7 @@ function ContactForm() {
       `\nEnquiry Category: ${form.type}\n\n${form.msg}`;
 
     const a = document.createElement("a");
-    a.href = `mailto:savankheni400@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    a.href = `mailto:info@startecdynamics.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -159,7 +159,7 @@ function ContactForm() {
                   className="input"
                 />
               </div>
-              <div className="field">
+              <div className="field-full">
                 <label className="label" htmlFor="f-type">
                   Enquiry type
                 </label>
