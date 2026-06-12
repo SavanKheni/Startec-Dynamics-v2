@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
+import emailjs from "@emailjs/browser";
 import "./ContactSections.css";
 import AnimatedText from "../AnimatedText";
+
+// ─── EmailJS init ─────────────────────────────────────────────────────────────
+emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY); // ← Account → General → Public Key
 
 // ─── Reveal hook ──────────────────────────────────────────────────────────────
 function useReveal() {
@@ -73,25 +77,50 @@ function ContactForm() {
     msg: "",
   });
 
+  const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
+
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
-  const [sent, setSent] = useState(false);
+
   const sendMail = () => {
-    const subject = `[${form.type}] enquiry${form.name ? ` from ${form.name}` : ""}`;
-    const body =
-      `Name: ${form.name}\nEmail: ${form.email}` +
-      (form.org ? `\nOrganisation: ${form.org}` : "") +
-      (form.country ? `\nCountry: ${form.country}` : "") +
-      `\nEnquiry Category: ${form.type}\n\n${form.msg}`;
+    if (!form.name || !form.email || !form.msg) {
+      setError("Please fill in Name, Email, and Message.");
+      return;
+    }
+    setError("");
+    setSending(true);
 
-    const a = document.createElement("a");
-    a.href = `mailto:info@startecdynamics.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-
-    setSent(true);
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID, // ← Email Services → your service ID
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID, // ← Email Templates → your template ID (verify in dashboard URL)
+        {
+          from_name: form.name,
+          from_email: form.email,
+          organisation: form.org,
+          country: form.country,
+          enquiry_type: form.type,
+          message: form.msg,
+        },
+      )
+      .then(() => {
+        setSent(true);
+        setSending(false);
+      })
+      .catch((err) => {
+        console.error("EmailJS error status:", err.status);
+        console.error("EmailJS error text:", err.text);
+        setError(
+          err.text === "The template ID not found."
+            ? "Template not found — check your template ID in the EmailJS dashboard."
+            : `Error ${err.status}: ${err.text}`,
+        );
+        setSending(false);
+      });
   };
+
   return (
     <section className="sec" id="form">
       <div className="wrap">
@@ -202,17 +231,21 @@ function ContactForm() {
                 {sent ? (
                   <div className="form-success">
                     <span className="success-icon">✓</span>
-                    Your message is ready — complete the send in your email
-                    client.
+                    Message sent — we'll be in touch within 2 business days.
                   </div>
                 ) : (
-                  <button onClick={sendMail} className="send-btn">
-                    SEND MESSAGE <span className="arrow">↗</span>
+                  <button
+                    onClick={sendMail}
+                    className="send-btn"
+                    disabled={sending}
+                  >
+                    {sending ? "SENDING…" : "SEND MESSAGE"}{" "}
+                    {!sending && <span className="arrow">↗</span>}
                   </button>
                 )}
+                {error && <div className="form-error">{error}</div>}
                 <div className="form-note">
-                  // Opens your email client, addressed to the Startec Dynamics
-                  team.
+                  // Sent directly — no email client required.
                 </div>
               </div>
             </div>
