@@ -22,7 +22,7 @@ export default function SheetFrame() {
         <i className="bl" />
         <i className="br" />
       </div>
-      <div className="corner t-l">STARTEC DYNAMICS / INDEPENDENT R&amp;D</div>
+      <div className="corner t-l">STARTEC DYNAMICS</div>
       <div className="corner t-r">
         SHEET {sheet} — INDEX
         <br />
