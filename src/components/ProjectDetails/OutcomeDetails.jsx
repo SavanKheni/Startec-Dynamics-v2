@@ -27,33 +27,33 @@ import AnimatedText from "../AnimatedText";
 const CRASH_1 = [
   {
     img: c11,
-    alt: "SI Connect locate and status",
-    h: "Vehicle Location",
-    p: "Stay connected to your bike from anywhere. Monitor real-time location, view travel history, control key systems, and plan ahead with nearby gas stations and live weather — all from one intuitive dashboard.",
+    alt: "Incident Notification",
+    h: "Incident Notification",
+    p: "A crash incident has been reported. Initial assessment and investigation are currently in progress.",
   },
   {
     img: c12,
-    alt: "SI Connect theft detection",
-    h: "Security & System Notifications",
-    p: "Get instant alerts when it matters most. Respond to theft events in real time, confirm incidents directly from the app, and stay up to date with system notifications ensuring you always have the latest features.",
+    alt: "Alert & Notification",
+    h: "Alert & Notification",
+    p: "Real-time incident alerts and updates for immediate action and monitoring.",
   },
   {
     img: c13,
-    alt: "SI Connect alerts and commands",
-    h: "Notification & Command History",
-    p: "Keep a clear record of every event and action. Review collision alerts with timestamps and locations, and track past commands — unlocking, lighting, engine changes — to confirm everything executed as intended.",
+    alt: "Vehicle Condition Report",
+    h: "Vehicle Condition Report",
+    p: "Summary of the vehicle’s current status, including damage assessment and operational condition.",
   },
   {
     img: c14,
-    alt: "SI Connect nearby help",
-    h: "Essential Services Locator",
-    p: "Find what you need, fast. Locate nearby gas stations and medical facilities with live status, addresses, contact numbers, and direct map links — so you are never without support when you need it most.",
+    alt: "Vehicle Location Status",
+    h: "Vehicle Location Status",
+    p: "Current vehicle position and movement status updated in real time.",
   },
   {
     img: c15,
-    alt: "SI Connect nearby help",
-    h: "Essential Services Locator",
-    p: "Find what you need, fast. Locate nearby gas stations and medical facilities with live status, addresses, contact numbers, and direct map links — so you are never without support when you need it most.",
+    alt: "Rider Condition",
+    h: "Rider Condition",
+    p: "Current health and safety status of the rider after the incident.",
   },
 ];
 const CRASH_2 = [
