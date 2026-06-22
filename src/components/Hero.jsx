@@ -12,8 +12,7 @@ export default function Hero() {
           <AnimatedText as="span" text="We turn hard" />
           <br /> <AnimatedText as="span" text="questions into" />
           <br /> <AnimatedText as="span" text="working" />{" "}
-          <span className="mk">
-            {" "}
+{" "}<span className="mk">
             <AnimatedText as="span" text="hardware." />
           </span>
         </h1>

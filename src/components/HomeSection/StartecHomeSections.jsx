@@ -92,8 +92,7 @@ function HeroSection() {
             as="span"
             text="Startec Dynamics turns everyday mechanical products into intelligent systems that can sense, connect, respond, and support people"
           />
-          <span className="mk">
-            {" "}
+{" "}<span className="mk">
             <AnimatedText as="span" text="in real time." delayStart={2490} />
           </span>
         </h1>
