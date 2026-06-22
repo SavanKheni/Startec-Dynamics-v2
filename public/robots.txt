@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+Disallow: /cart
+Disallow: /checkout
+Disallow: /account
+Disallow: /collections
+Disallow: /products
+Disallow: /orders
+Disallow: /policies
+Disallow: /password
+
+Sitemap: https://startecdynamics.com/sitemap.xml
