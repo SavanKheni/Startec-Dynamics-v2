@@ -98,6 +98,12 @@ const STATUS_ITEMS = [
     h: "Blind-spot & traffic detection",
     p: "Next in R&D: side and traffic-detection sensors that warn riders of approaching vehicles — most accidents happen when a rider never sees what's coming.",
   },
+  {
+    k: "OUTCOME",
+    d: "d3",
+    h: "Startec Insurance Claims",
+    p: "Provides a smart and efficient solution for managing vehicle insurance claims. By leveraging intelligent data collection and real-time incident reporting, it helps simplify the claims process.",
+  },
 ];
 
 const SI_CONNECT_SLIDES = [
@@ -1061,17 +1067,39 @@ const StartecIntelligentDetails = () => {
       <section className="sec status" id="status">
         <div className="wrap">
           <SectionHead no="§05" label="Status & Deployment" />
-          {STATUS_ITEMS.map(({ k, d, h, p }) => (
-            <div className={`row reveal ${d}`} key={k}>
-              <div className="k">{k}</div>
-              <div className="v">
-                <h4>
-                  <AnimatedText as="span" text={h} />
-                </h4>
-                <p>{p}</p>
+          {STATUS_ITEMS.map(({ k, d, h, p }, index) => {
+            const isLast = index === STATUS_ITEMS.length - 1;
+
+            return (
+              <div className={`row reveal ${d}`} key={k}>
+                <div className="k">{k}</div>
+
+                <div className="v">
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <h4>
+                      <AnimatedText as="span" text={h} />
+                    </h4>
+
+                    {isLast && (
+                      <a href="/outcome">
+                        <div className="act">
+                          OPEN FILE <span className="a">↗</span>
+                        </div>
+                      </a>
+                    )}
+                  </div>
+
+                  <p>{p}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
