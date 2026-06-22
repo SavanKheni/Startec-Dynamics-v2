@@ -322,7 +322,9 @@ function Carousel({ interval = 4500, tag, slides }) {
 
       <div className="car-desc">
         <div className="car-top">
-          <span className="car-tag">{tag}</span>
+          <span className="car-tag" style={{ fontSize: "7px" }}>
+            {tag}
+          </span>
           <span className="car-step">
             01 / {String(slides.length).padStart(2, "0")}
           </span>
@@ -373,10 +375,10 @@ const OutcomeDetails = () => {
     <div className="project-details-page">
       {/* ── INTERFACE §04 ── */}
       <section className="" id="interface">
-        <div className="wrap">
-          <SectionHead no="§04" label="Interface — As It Ships" />
-          <h2 className="sys-h reveal d1">
-            <AnimatedText as="span" text="The product, as it looks today." />
+        <div className="wrap" style={{ paddingTop: "40px" }}>
+          {/* <SectionHead no="§04" label="Interface — As It Ships" /> */}
+          <h2 className="sys-h reveal d1" style={{ marginBottom: "5px" }}>
+            <AnimatedText as="span" text="User Incident Reports" />
           </h2>
           <p
             className="reveal d1"
@@ -387,30 +389,36 @@ const OutcomeDetails = () => {
               marginBottom: "30px",
             }}
           >
-            Real screens from the shipping product — the SI Connect rider app
-            and the SI Fleet Management console operators use to oversee whole
-            fleets. They cycle automatically; hover to pause.
+            User Incident Reports provide a structured and efficient way to
+            capture, track, and manage issues reported by users. The system
+            helps organizations document incidents accurately, monitor their
+            resolution progress, and improve service quality by identifying
+            recurring problems and ensuring timely corrective actions.
           </p>
           <div
             className=""
             style={{ display: "flex", justifyContent: "space-between" }}
           >
             <div className="grouplbl reveal">
-              <b>A.</b> SI CONNECT · RIDER APP
+              <b>A.</b> SI INTELLIGENT · INSURANCE CLAIMS
             </div>
           </div>
-          <Carousel interval={4500} tag="SI CONNECT · RIDER" slides={CRASH_1} />
+          <Carousel
+            interval={4500}
+            tag="SI INTELLIGENT · Vehicle Damage Assessment"
+            slides={CRASH_1}
+          />
           <div
             className=""
             style={{ display: "flex", justifyContent: "space-between" }}
           >
             <div className="grouplbl reveal">
-              <b>B.</b> SI FLEET MANAGEMENT · OPERATOR CONSOLE
+              <b>B.</b> SI INTELLIGENT · INSURANCE CLAIMS
             </div>
           </div>
           <Carousel
             interval={5000}
-            tag="SI FLEET · OPERATOR"
+            tag="SI INTELLIGENT · Vehicle Damage Assessment"
             slides={CRASH_2}
           />
           <div
@@ -418,12 +426,12 @@ const OutcomeDetails = () => {
             style={{ display: "flex", justifyContent: "space-between" }}
           >
             <div className="grouplbl reveal">
-              <b>B.</b> SI FLEET MANAGEMENT · OPERATOR CONSOLE
+              <b>C.</b> SI INTELLIGENT · INSURANCE CLAIMS
             </div>
           </div>
           <Carousel
             interval={5000}
-            tag="SI FLEET · OPERATOR"
+            tag="SI INTELLIGENT · Vehicle Damage Assessment"
             slides={CRASH_3}
           />
           <div
@@ -431,12 +439,12 @@ const OutcomeDetails = () => {
             style={{ display: "flex", justifyContent: "space-between" }}
           >
             <div className="grouplbl reveal">
-              <b>B.</b> SI FLEET MANAGEMENT · OPERATOR CONSOLE
+              <b>D.</b> SI INTELLIGENT · INSURANCE CLAIMS
             </div>
           </div>
           <Carousel
             interval={5000}
-            tag="SI FLEET · OPERATOR"
+            tag="SI INTELLIGENT · Vehicle Damage Assessment"
             slides={CRASH_4}
           />
         </div>
