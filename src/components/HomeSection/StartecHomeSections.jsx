@@ -84,14 +84,13 @@ function HeroSection() {
     <header className="hero" id="top">
       <div className="wrap">
         <div className="eyebrow reveal d1">
-          <span className="tick">●</span> EST. 2022 · VANCOUVER, CANADA{" "}
-          <span className="tick">/</span> INDEPENDENT RESEARCH &amp; DEVELOPMENT
+          <span className="tick">●</span> EST. 2022 · VANCOUVER, CANADA
         </div>
 
         <h1 className="reveal d2">
           <AnimatedText
             as="span"
-            text="Startec turns isolated machines into connected, intelligent systems that support people"
+            text="Startec Dynamics turns everyday mechanical products into intelligent systems that can sense, connect, respond, and support people"
           />
           <span className="mk">
             {" "}
@@ -104,8 +103,9 @@ function HeroSection() {
             <p className="hero-lead">
               We pick what needs to change — and let the products follow.{" "}
               <span className="soft">
-                From first principles to field validation, we build what works
-                outside the lab.
+                For too long, the machines people rely on have existed on their
+                own: useful, but disconnected; powerful, but unable to respond
+                when it matters.
               </span>
             </p>
             <div className="hero-actions">
@@ -172,7 +172,7 @@ function ThesisSection() {
           </em>{" "}
           <AnimatedText
             as="span"
-            text="For too long, the machines people rely on have existed on their own:  useful, but disconnected; powerful, but unable to respond when it matters."
+            text="For too long, the machines people rely on have existed on their own: useful, but disconnected; powerful, but unable to respond when it matters."
             delayStart={(31 + 28) * 30}
           />
         </p>

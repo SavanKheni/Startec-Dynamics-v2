@@ -6,9 +6,7 @@ export default function Hero() {
     <header className="hero" id="top">
       <div className="wrap">
         <div className="eyebrow reveal d1">
-          <span className="tick">●</span> EST. 2022 · VANCOUVER, CANADA{" "}
-          <span className="tick">/</span> AN INDEPENDENT RESEARCH &amp;
-          DEVELOPMENT COMPANY
+          <span className="tick">●</span> EST. 2022 · VANCOUVER, CANADA
         </div>
         <h1 className="reveal d2">
           <AnimatedText as="span" text="We turn hard" />
