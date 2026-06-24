@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 
 import "./styles/global.css";
 
@@ -19,6 +19,26 @@ import SiConnect from "./pages/SiConnect";
 import Press from "./pages/Press";
 import FleetManagement from "./pages/FleetManagement";
 import OutcomeDetails from "./components/ProjectDetails/OutcomeDetails";
+
+function ScrollToHash({ lenisRef }) {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (!hash) return;
+    const id = setTimeout(() => {
+      const el = document.querySelector(hash);
+      if (!el) return;
+      if (lenisRef?.current) {
+        lenisRef.current.scrollTo(el, { offset: -80, duration: 1.4 });
+      } else {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 120);
+    return () => clearTimeout(id);
+  }, [pathname, hash]);
+
+  return null;
+}
 
 export default function App() {
   useReveal();
@@ -48,6 +68,7 @@ export default function App() {
 
   return (
     <div>
+      <ScrollToHash lenisRef={lenisRef} />
       <Navbar lenisRef={lenisRef} /> {/* ← pass ref */}
       <SheetFrame />
       <main>

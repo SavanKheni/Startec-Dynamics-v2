@@ -698,6 +698,7 @@
     position: relative;
     aspect-ratio: 16/10;
     background: radial-gradient(130% 120% at 28% 12%, #252b3b 0%, #15171c 68%);
+    /* box-shadow: inset -24px 0 24px rgba(0,0,0,.55); */
 }
 
 .project-details-page .car-stage::after {
@@ -745,7 +746,7 @@
     display: flex;
     flex-direction: column;
     padding: 28px;
-    border-left: 1px solid var(--dark-line);
+    border-left: none;
     background: #101216;
 }
 

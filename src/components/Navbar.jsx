@@ -35,6 +35,12 @@ const NAV_LINKS = {
     { href: "#coverage", label: "Coverage" },
     { href: "#kit", label: "Press Kit" },
   ],
+  "/outcome": [
+    { href: "/startec-intelligent#overview", label: "Overview" },
+    { href: "/startec-intelligent#cap", label: "Capabilities" },
+    { href: "/startec-intelligent#system", label: "System" },
+    { href: "/startec-intelligent#status", label: "Status" },
+  ],
 };
 
 const NAV_CTA = {
@@ -43,6 +49,7 @@ const NAV_CTA = {
   "/contact-us": { href: "#form", label: "START A MESSAGE →" },
   "/startec-intelligent": { href: "#contact", label: "TALK TO US →" },
   "/press": { href: "#kit", label: "MEDIA ENQUIRIES →" },
+  "/outcome": { href: "/contact-us", label: "CONTACT →" },
 };
 
 export default function Navbar({ lenisRef }) {
