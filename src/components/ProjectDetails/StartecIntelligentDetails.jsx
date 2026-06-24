@@ -68,6 +68,12 @@ const UNIT_SPECS = [
 ];
 
 const STATUS_ITEMS = [
+   {
+    k: "OUTCOME",
+    d: "d3",
+    h: "Claims, Settled by Data",
+    p: "From incident to insurer in under 90 seconds. Whether it's a crash or a stolen bike, SI captures the full picture — what happened, where, and to whom — and delivers it automatically, removing the guesswork, delays, and disputes that slow traditional claims.",
+  },
   {
     k: "● Live",
     d: "d1",
@@ -98,12 +104,7 @@ const STATUS_ITEMS = [
     h: "Blind-spot & traffic detection",
     p: "Next in R&D: side and traffic-detection sensors that warn riders of approaching vehicles — most accidents happen when a rider never sees what's coming.",
   },
-  {
-    k: "OUTCOME",
-    d: "d3",
-    h: "Startec Insurance Claims",
-    p: "Provides a smart and efficient solution for managing vehicle insurance claims. By leveraging intelligent data collection and real-time incident reporting, it helps simplify the claims process.",
-  },
+ 
 ];
 
 const SI_CONNECT_SLIDES = [

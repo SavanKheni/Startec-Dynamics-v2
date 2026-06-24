@@ -27,129 +27,129 @@ import AnimatedText from "../AnimatedText";
 const CRASH_1 = [
   {
     img: c11,
-    alt: "Incident Notification",
-    h: "Incident Notification",
-    p: "A crash incident has been reported. Initial assessment and investigation are currently in progress.",
+    alt: "Insurer Notified Automatically",
+    h: "Insurer Notified Automatically",
+    p: "Within seconds of impact, the SI ECU sends an automated notification to the insurance partner via Telegram — carrying VIN, timestamp, GPS, and severity. No rider action required, closing the gap between event and claim intake.",
   },
   {
     img: c12,
-    alt: "Alert & Notification",
-    h: "Alert & Notification",
-    p: "Real-time incident alerts and updates for immediate action and monitoring.",
+    alt: "Crash Detected",
+    h: "Crash Detected",
+    p: "The onboard IMU and crash detection algorithm flag the event in real time, surfacing it on the FMS dashboard within 90 seconds. Fully autonomous — no SOS button, no phone call. 100% detection accuracy across confirmed field incidents to date.",
   },
   {
     img: c13,
     alt: "Vehicle Condition Report",
     h: "Vehicle Condition Report",
-    p: "Summary of the vehicle’s current status, including damage assessment and operational condition.",
+    p: "The vehicle’s current condition is assessed immediately after the incident to determine the extent of damage and operational capability. Detailed inspection helps identify structural or functional issues, confirm safety risks, and decide whether the vehicle is drivable or requires towing and repairs.",
   },
   {
     img: c14,
-    alt: "Vehicle Location Status",
-    h: "Vehicle Location Status",
-    p: "Current vehicle position and movement status updated in real time.",
+    alt: "Accident Location Confirmed",
+    h: "Accident Location Confirmed",
+    p: "GPS coordinates from the moment of impact are locked and transmitted with the alert, giving responders and recovery teams an exact location. The position stays live on the FMS dashboard through the full incident response.",
   },
   {
     img: c15,
     alt: "Rider Condition",
     h: "Rider Condition",
-    p: "Current health and safety status of the rider after the incident.",
+    p: "GPS coordinates from the moment of impact are locked and transmitted with the alert, giving responders and recovery teams an exact location. The position stays live on the FMS dashboard through the full incident response.",
   },
 ];
 const CRASH_2 = [
   {
     img: c21,
-    alt: "SI Connect locate and status",
-    h: "Vehicle Location",
-    p: "Stay connected to your bike from anywhere. Monitor real-time location, view travel history, control key systems, and plan ahead with nearby gas stations and live weather — all from one intuitive dashboard.",
+    alt: "Insurer Notified Automatically",
+    h: "Insurer Notified Automatically",
+    p: "Within seconds of impact, the SI ECU sends an automated notification to the insurance partner via Telegram — carrying VIN, timestamp, GPS, and severity. No rider action required, closing the gap between event and claim intake.",
   },
   {
     img: c22,
-    alt: "SI Connect theft detection",
-    h: "Security & System Notifications",
-    p: "Get instant alerts when it matters most. Respond to theft events in real time, confirm incidents directly from the app, and stay up to date with system notifications ensuring you always have the latest features.",
+    alt: "Crash Detected",
+    h: "Crash Detected",
+    p: "The onboard IMU and crash detection algorithm flag the event in real time, surfacing it on the FMS dashboard within 90 seconds. Fully autonomous — no SOS button, no phone call. 100% detection accuracy across confirmed field incidents to date.",
   },
   {
     img: c23,
-    alt: "SI Connect alerts and commands",
-    h: "Notification & Command History",
-    p: "Keep a clear record of every event and action. Review collision alerts with timestamps and locations, and track past commands — unlocking, lighting, engine changes — to confirm everything executed as intended.",
+    alt: "Vehicle Condition Report",
+    h: "Vehicle Condition Report",
+    p: "The vehicle's current condition is assessed immediately after the incident to determine the extent of damage and operational capability. Detailed inspection helps identify structural or functional issues, confirm safety risks, and decide whether the vehicle is drivable or requires towing and repairs.",
   },
   {
     img: c24,
-    alt: "SI Connect nearby help",
-    h: "Essential Services Locator",
-    p: "Find what you need, fast. Locate nearby gas stations and medical facilities with live status, addresses, contact numbers, and direct map links — so you are never without support when you need it most.",
+    alt: "Accident Location Confirmed",
+    h: "Accident Location Confirmed",
+    p: "GPS coordinates from the moment of impact are locked and transmitted with the alert, giving responders and recovery teams an exact location. The position stays live on the FMS dashboard through the full incident response.",
   },
   {
     img: c25,
-    alt: "SI Connect nearby help",
-    h: "Essential Services Locator",
-    p: "Find what you need, fast. Locate nearby gas stations and medical facilities with live status, addresses, contact numbers, and direct map links — so you are never without support when you need it most.",
+    alt: "Rider Condition",
+    h: "Rider Condition",
+    p: "GPS coordinates from the moment of impact are locked and transmitted with the alert, giving responders and recovery teams an exact location. The position stays live on the FMS dashboard through the full incident response.",
   },
 ];
 const CRASH_3 = [
   {
     img: c31,
-    alt: "SI Connect locate and status",
-    h: "Vehicle Location",
-    p: "Stay connected to your bike from anywhere. Monitor real-time location, view travel history, control key systems, and plan ahead with nearby gas stations and live weather — all from one intuitive dashboard.",
+    alt: "Insurer Notified Automatically",
+    h: "Insurer Notified Automatically",
+    p: "Within seconds of impact, the SI ECU sends an automated notification to the insurance partner via Telegram — carrying VIN, timestamp, GPS, and severity. No rider action required, closing the gap between event and claim intake.",
   },
   {
     img: c32,
-    alt: "SI Connect theft detection",
-    h: "Security & System Notifications",
-    p: "Get instant alerts when it matters most. Respond to theft events in real time, confirm incidents directly from the app, and stay up to date with system notifications ensuring you always have the latest features.",
+    alt: "Crash Detected",
+    h: "Crash Detected",
+    p: "The onboard IMU and crash detection algorithm flag the event in real time, surfacing it on the FMS dashboard within 90 seconds. Fully autonomous — no SOS button, no phone call. 100% detection accuracy across confirmed field incidents to date.",
   },
   {
     img: c33,
-    alt: "SI Connect alerts and commands",
-    h: "Notification & Command History",
-    p: "Keep a clear record of every event and action. Review collision alerts with timestamps and locations, and track past commands — unlocking, lighting, engine changes — to confirm everything executed as intended.",
+    alt: "Vehicle Condition Report",
+    h: "Vehicle Condition Report",
+    p: "The vehicle's current condition is assessed immediately after the incident to determine the extent of damage and operational capability. Detailed inspection helps identify structural or functional issues, confirm safety risks, and decide whether the vehicle is drivable or requires towing and repairs.",
   },
   {
     img: c34,
-    alt: "SI Connect nearby help",
-    h: "Essential Services Locator",
-    p: "Find what you need, fast. Locate nearby gas stations and medical facilities with live status, addresses, contact numbers, and direct map links — so you are never without support when you need it most.",
+    alt: "Accident Location Confirmed",
+    h: "Accident Location Confirmed",
+    p: "GPS coordinates from the moment of impact are locked and transmitted with the alert, giving responders and recovery teams an exact location. The position stays live on the FMS dashboard through the full incident response.",
   },
   {
     img: c35,
-    alt: "SI Connect nearby help",
-    h: "Essential Services Locator",
-    p: "Find what you need, fast. Locate nearby gas stations and medical facilities with live status, addresses, contact numbers, and direct map links — so you are never without support when you need it most.",
+    alt: "Rider Condition",
+    h: "Rider Condition",
+    p: "GPS coordinates from the moment of impact are locked and transmitted with the alert, giving responders and recovery teams an exact location. The position stays live on the FMS dashboard through the full incident response.",
   },
 ];
 const CRASH_4 = [
   {
     img: c41,
-    alt: "SI Connect locate and status",
-    h: "Vehicle Location",
-    p: "Stay connected to your bike from anywhere. Monitor real-time location, view travel history, control key systems, and plan ahead with nearby gas stations and live weather — all from one intuitive dashboard.",
+    alt: "Insurer Notified Automatically",
+    h: "Insurer Notified Automatically",
+    p: "Within seconds of impact, the SI ECU sends an automated notification to the insurance partner via Telegram — carrying VIN, timestamp, GPS, and severity. No rider action required, closing the gap between event and claim intake.",
   },
   {
     img: c42,
-    alt: "SI Connect theft detection",
-    h: "Security & System Notifications",
-    p: "Get instant alerts when it matters most. Respond to theft events in real time, confirm incidents directly from the app, and stay up to date with system notifications ensuring you always have the latest features.",
+    alt: "Crash Detected",
+    h: "Crash Detected",
+    p: "The onboard IMU and crash detection algorithm flag the event in real time, surfacing it on the FMS dashboard within 90 seconds. Fully autonomous — no SOS button, no phone call. 100% detection accuracy across confirmed field incidents to date.",
   },
   {
     img: c43,
-    alt: "SI Connect alerts and commands",
-    h: "Notification & Command History",
-    p: "Keep a clear record of every event and action. Review collision alerts with timestamps and locations, and track past commands — unlocking, lighting, engine changes — to confirm everything executed as intended.",
+    alt: "Vehicle Condition Report",
+    h: "Vehicle Condition Report",
+    p: "The vehicle's current condition is assessed immediately after the incident to determine the extent of damage and operational capability. Detailed inspection helps identify structural or functional issues, confirm safety risks, and decide whether the vehicle is drivable or requires towing and repairs.",
   },
   {
     img: c44,
-    alt: "SI Connect nearby help",
-    h: "Essential Services Locator",
-    p: "Find what you need, fast. Locate nearby gas stations and medical facilities with live status, addresses, contact numbers, and direct map links — so you are never without support when you need it most.",
+    alt: "Accident Location Confirmed",
+    h: "Accident Location Confirmed",
+    p: "GPS coordinates from the moment of impact are locked and transmitted with the alert, giving responders and recovery teams an exact location. The position stays live on the FMS dashboard through the full incident response.",
   },
   {
     img: c45,
-    alt: "SI Connect nearby help",
-    h: "Essential Services Locator",
-    p: "Find what you need, fast. Locate nearby gas stations and medical facilities with live status, addresses, contact numbers, and direct map links — so you are never without support when you need it most.",
+    alt: "Rider Condition",
+    h: "Rider Condition",
+    p: "GPS coordinates from the moment of impact are locked and transmitted with the alert, giving responders and recovery teams an exact location. The position stays live on the FMS dashboard through the full incident response.",
   },
 ];
 
@@ -378,7 +378,7 @@ const OutcomeDetails = () => {
         <div className="wrap" style={{ paddingTop: "40px" }}>
           {/* <SectionHead no="§04" label="Interface — As It Ships" /> */}
           <h2 className="sys-h reveal d1" style={{ marginBottom: "5px" }}>
-            <AnimatedText as="span" text="User Incident Reports" />
+            <AnimatedText as="span" text="Proven in the Field" />
           </h2>
           <p
             className="reveal d1"
@@ -389,18 +389,20 @@ const OutcomeDetails = () => {
               marginBottom: "30px",
             }}
           >
-            User Incident Reports provide a structured and efficient way to
-            capture, track, and manage issues reported by users. The system
-            helps organizations document incidents accurately, monitor their
-            resolution progress, and improve service quality by identifying
-            recurring problems and ensuring timely corrective actions.
+            When a rider crashes, SI Intelligent turns the claim into evidence.
+            It confirms exactly when and where the accident happened, captures
+            how the bike was being ridden and how fast in the moments before
+            impact, and records the aftermath — vehicle damage and rider
+            condition. The insurance team is notified the instant a crash is
+            detected, giving them a verified, time-stamped account instead of
+            relying on the customer's word.
           </p>
           <div
             className=""
             style={{ display: "flex", justifyContent: "space-between" }}
           >
             <div className="grouplbl reveal">
-              <b>A.</b> SI INTELLIGENT · INSURANCE CLAIMS
+              <b>A.</b> SI INTELLIGENT · INSURANCE CLAIMS 6 January 2026
             </div>
           </div>
           <Carousel
@@ -413,7 +415,7 @@ const OutcomeDetails = () => {
             style={{ display: "flex", justifyContent: "space-between" }}
           >
             <div className="grouplbl reveal">
-              <b>B.</b> SI INTELLIGENT · INSURANCE CLAIMS
+              <b>B.</b> SI INTELLIGENT · INSURANCE CLAIMS 13 February 2026
             </div>
           </div>
           <Carousel
@@ -426,7 +428,7 @@ const OutcomeDetails = () => {
             style={{ display: "flex", justifyContent: "space-between" }}
           >
             <div className="grouplbl reveal">
-              <b>C.</b> SI INTELLIGENT · INSURANCE CLAIMS
+              <b>C.</b> SI INTELLIGENT · INSURANCE CLAIMS 13 February 2026
             </div>
           </div>
           <Carousel
@@ -439,7 +441,7 @@ const OutcomeDetails = () => {
             style={{ display: "flex", justifyContent: "space-between" }}
           >
             <div className="grouplbl reveal">
-              <b>D.</b> SI INTELLIGENT · INSURANCE CLAIMS
+              <b>D.</b> SI INTELLIGENT · INSURANCE CLAIMS 8 April 2026
             </div>
           </div>
           <Carousel

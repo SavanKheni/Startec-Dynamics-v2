@@ -7,6 +7,7 @@ const SHEET_NUMBER = {
   "/about-us": "03",
   "/press": "04",
   "/contact-us": "05",
+  "/outcome": "06",
 };
 export default function Footer() {
   const { pathname } = useLocation();
@@ -64,7 +65,7 @@ export default function Footer() {
           </div>
           <div className="tb">
             <div className="k">Sheet</div>
-            <div className="v">{sheet} of 05</div>
+            <div className="v">{sheet} of 06</div>
           </div>
           <div className="tb">
             <div className="k">Revision</div>
