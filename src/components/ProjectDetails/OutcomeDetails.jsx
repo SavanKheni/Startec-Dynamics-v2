@@ -402,7 +402,7 @@ const OutcomeDetails = () => {
             style={{ display: "flex", justifyContent: "space-between" }}
           >
             <div className="grouplbl reveal">
-              <b>A.</b> SI INTELLIGENT · INSURANCE CLAIMS 6 January 2026
+              <b>A.</b> SI INTELLIGENT · INSURANCE CLAIMS · 6 January 2026
             </div>
           </div>
           <Carousel
@@ -415,7 +415,7 @@ const OutcomeDetails = () => {
             style={{ display: "flex", justifyContent: "space-between" }}
           >
             <div className="grouplbl reveal">
-              <b>B.</b> SI INTELLIGENT · INSURANCE CLAIMS 13 February 2026
+              <b>B.</b> SI INTELLIGENT · INSURANCE CLAIMS · 13 February 2026
             </div>
           </div>
           <Carousel
@@ -428,7 +428,7 @@ const OutcomeDetails = () => {
             style={{ display: "flex", justifyContent: "space-between" }}
           >
             <div className="grouplbl reveal">
-              <b>C.</b> SI INTELLIGENT · INSURANCE CLAIMS 13 February 2026
+              <b>C.</b> SI INTELLIGENT · INSURANCE CLAIMS · 13 February 2026
             </div>
           </div>
           <Carousel
@@ -441,7 +441,7 @@ const OutcomeDetails = () => {
             style={{ display: "flex", justifyContent: "space-between" }}
           >
             <div className="grouplbl reveal">
-              <b>D.</b> SI INTELLIGENT · INSURANCE CLAIMS 8 April 2026
+              <b>D.</b> SI INTELLIGENT · INSURANCE CLAIMS · 8 April 2026
             </div>
           </div>
           <Carousel

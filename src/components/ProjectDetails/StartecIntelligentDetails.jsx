@@ -1069,7 +1069,7 @@ const StartecIntelligentDetails = () => {
         <div className="wrap">
           <SectionHead no="§05" label="Status & Deployment" />
           {STATUS_ITEMS.map(({ k, d, h, p }, index) => {
-            const isLast = index === STATUS_ITEMS.length - 1;
+            const isLast = index ===  0;
 
             return (
               <div className={`row reveal ${d}`} key={k}>
