@@ -1085,6 +1085,7 @@ const StartecIntelligentDetails = () => {
                   >
                     <h4>
                       <AnimatedText as="span" text={h} />
+                      <span className="ar">→</span>
                     </h4>
 
                     {isLast && (

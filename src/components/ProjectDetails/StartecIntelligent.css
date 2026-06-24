@@ -884,13 +884,19 @@
     display: grid;
     grid-template-columns: 130px 1fr;
     gap: 24px;
-    padding: 24px 0;
+    padding: 24px 16px;
     border-bottom: 1px solid var(--line);
     align-items: start;
+    transition: background .25s;
+    cursor: default;
 }
 
 .project-details-page .status .row:first-of-type {
     border-top: 1px solid var(--line-2);
+}
+
+.project-details-page .status .row:hover {
+    background: var(--panel-2);
 }
 
 .project-details-page .status .k {
@@ -906,6 +912,23 @@
     font-weight: 600;
     font-size: 22px;
     margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.project-details-page .status .v h4 .ar {
+    color: var(--red);
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: .25s;
+    font-family: 'Space Mono', monospace;
+    font-size: 14px;
+}
+
+.project-details-page .status .row:hover .ar {
+    opacity: 1;
+    transform: none;
 }
 
 .project-details-page .status .v p {

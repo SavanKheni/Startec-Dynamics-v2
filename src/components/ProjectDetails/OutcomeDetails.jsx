@@ -385,7 +385,7 @@ const OutcomeDetails = () => {
             style={{
               color: "var(--soft)",
               fontSize: "15px",
-              maxWidth: "640px",
+              maxWidth: "75%",
               marginBottom: "30px",
             }}
           >
